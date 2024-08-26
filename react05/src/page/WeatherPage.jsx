@@ -1,8 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 const WeatherPage = () => {
+
+  const [weather, setWeather] = useState({})
+  // 우리가 보고있는 정보의 형태가 객체니까 {}
 
     const getCurrentWeather = async ()=>{
         let cityName = 'Gwangju';
@@ -11,6 +15,10 @@ const WeatherPage = () => {
         const res = await axios.get(weather_url)
         const data = res.data
 
+        // API 호출 응답결과를 state에 저장
+        setWeather(data)
+
+        console.log('응답정보', res);
         console.log('날씨정보:', data);
         
     }
@@ -21,7 +29,15 @@ const WeatherPage = () => {
     },[]) // MOUNT 상태
 
   return (
-    <div>WeatherPage</div>
+    <div>
+      <h1>WeatherPage</h1>
+      <div>
+        <p>도시 : {weather.name}</p>
+        <p>온도: {weather.main?.temp}</p>
+        <p>날씨상태: {weather.weather[0].description}</p>
+        {/* REACT에서 물음표 >> 데이터가 있냐 없냐 >> 있으면 보여주고 없어도 에러 안뜨도록 */}
+      </div>
+    </div>
   )
 }
 
