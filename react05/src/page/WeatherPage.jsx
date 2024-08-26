@@ -35,7 +35,9 @@ const WeatherPage = () => {
         <p>도시 : {weather.name}</p>
         <p>온도: {weather.main?.temp}</p>
         <p>날씨상태: {weather.weather[0].description}</p>
-        {/* REACT에서 물음표 >> 데이터가 있냐 없냐 >> 있으면 보여주고 없어도 에러 안뜨도록 */}
+        <p><img src={`https://openweathermap.org/img/wn/04d@2x.png`} alt="날씨이미지"></img></p>
+        {/* 로칼서버가 아니라 외부서버에 데이터 요청하는거라서 통신 속도에 따라 에러가 뜰 수도 있음
+          >> REACT에서 물음표 문법>> 데이터가 있냐 없냐 >> 있으면 보여주고 없어도 에러 안 뜨도록 */}
       </div>
     </div>
   )
