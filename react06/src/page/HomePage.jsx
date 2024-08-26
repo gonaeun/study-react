@@ -6,14 +6,14 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const goToProduct = ()=>{
-        navigate('/product')
+        navigate('/product/1')
     }
   return (
     <div>
         <h1>HomePage</h1>
         <Link to={"/about"}>About 페이지로 이동</Link>
         <br></br>
-        <button onClick={goToProduct}>ProductPage fh dlehd</button>
+        <button onClick={goToProduct}>ProductPage로 이동</button>
     </div>
   )
 }
