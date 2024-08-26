@@ -12,7 +12,7 @@ const WeatherPage = () => {
 
     const getCurrentWeather = async ()=>{
         let cityName = 'Gwangju';
-        const API_KEY = 'd63e8cb3b097baac3b1a3eab593124ae';
+        const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
         let weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`
         const res = await axios.get(weather_url)
         const data = res.data
