@@ -35,15 +35,14 @@ const Header = () => {
               >
                 <img className='nav_logo_img' src='https://static.oliveyoung.co.kr/pc-static-root/image/comm/h1_logo.png'></img>
               </Nav>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
+              <div className='search_box'>
+                <Form className="d-flex">
+                  <Form.Control
+                    className="me-2 search_input"
+                    aria-label="Search"
+                  />
+                </Form>
+              </div>
             </Navbar.Collapse>
           </Container>
         </Navbar>
