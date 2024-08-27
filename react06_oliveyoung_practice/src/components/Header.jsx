@@ -55,7 +55,33 @@ const Header = () => {
       </div>
       <div>
         <Nav className='menu_list justify-content-center'>
-          <Nav.Item>오특</Nav.Item>
+          <Nav.Item>
+            <Nav.Link>오특</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>랭킹</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>헬스+</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>LUXE EDIT</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>기획전</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>세일</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>기프트카드</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>멤버십/쿠폰</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>이벤트</Nav.Link>
+          </Nav.Item>
         </Nav>
       </div>
     </div>
