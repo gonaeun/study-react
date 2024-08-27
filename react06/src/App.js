@@ -9,6 +9,8 @@ import ProductDetailPage2 from './page/ProductDetailPage2';
 import Login from './page/Login';
 import PrivateRouter from './page/PrivateRouter';
 
+import { useState } from 'react';
+
 // Routes : 요청 URL을 묶어서 관리하는 컴포넌트
 // Route : 요청 URL에 맞는 화면 컴포넌트를 렌더링해주는 컴포넌트
 
