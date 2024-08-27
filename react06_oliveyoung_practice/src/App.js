@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
 import MainPage from './page/MainPage';
 import LoginPage from './page/LoginPage';
 import ProductDetails from './page/ProductDetails';
@@ -24,6 +25,8 @@ function App() {
 
   return (
     <div className="container">
+      <Header/>
+
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
