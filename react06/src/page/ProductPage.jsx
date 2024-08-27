@@ -1,8 +1,20 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ProductPage = () => {
+
+  const navigate = useNavigate();
+
+  const goToProduct = () =>{
+    // QuerySrting(쿼리스트링)방식
+    // 다음 페이지로 이동할 때 데이터를 전달하는 방식 (?key=value)
+    navigate('/productQuery?prd_no=15')
+  }
   return (
-    <div>ProductPage</div>
+    <div>
+      <h1>ProductPage</h1>
+      <button onClick={goToProduct}>ProductDetail2로 이동</button>
+    </div>
   )
 }
 
