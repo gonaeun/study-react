@@ -53,7 +53,11 @@ const Header = () => {
           </Container>
         </Navbar>
       </div>
-      <div></div>
+      <div>
+        <Nav className='menu_list justify-content-center'>
+          <Nav.Item>오특</Nav.Item>
+        </Nav>
+      </div>
     </div>
   )
 }
