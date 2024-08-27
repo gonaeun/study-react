@@ -4,6 +4,10 @@
     font-size: 12px;
     margin-top: 10px;
   }
+
+  .nav_divider > ol {
+    justify-content: end;
+  }
   
   .nav_divider a {
     color: #383737;
