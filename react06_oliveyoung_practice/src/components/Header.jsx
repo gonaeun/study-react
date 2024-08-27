@@ -43,6 +43,12 @@ const Header = () => {
                   />
                 </Form>
               </div>
+
+              <Nav>
+                <Nav.Link>오늘드림</Nav.Link>
+                <Nav.Link>관심매장 소식</Nav.Link>
+                <Nav.Link>최근 본 상품</Nav.Link>
+              </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
