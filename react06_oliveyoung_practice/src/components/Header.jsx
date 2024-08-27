@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <div>
-        <Breadcrumb>
+        <Breadcrumb className='nav_divider'>
             <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>Library</Breadcrumb.Item>
             <Breadcrumb.Item>Data</Breadcrumb.Item>
