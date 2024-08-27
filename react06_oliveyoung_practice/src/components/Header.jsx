@@ -27,9 +27,9 @@ const Header = () => {
       <div>
           <Navbar expand="lg">
           <Container fluid>
-            <Navbar.Collapse id="navbarScroll">
+            <Navbar.Collapse id="navbarScroll" className='justify-content-around'>
               <Nav
-                className="me-auto my-2 my-lg-0"
+                className="my-2 my-lg-0"
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
