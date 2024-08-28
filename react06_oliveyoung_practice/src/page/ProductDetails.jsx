@@ -48,13 +48,13 @@ const ProductDetails = () => {
     <Container>
       <Row>
         <Col>
-          <img src={productDetail.prd_img} alt=''/>
+          <img src={productDetail?.prd_img} alt=''/>
         </Col>
         <Col>
-          <p>{productDetail.prd_brand}</p>
-          <p>{productDetail.prd_name}</p>
-          <p>{productDetail.prd_price}</p>
-          <p>추가 구매 할 상품정보 options 있으면 출력, 없으면 구매수량</p>
+          <p>{productDetail?.prd_brand}</p>
+          <p>{productDetail?.prd_name}</p>
+          <p>{productDetail?.prd_price}</p>
+          <p>{productDetail?.prd_options.length !==0 ? ('추가상품있음'):('없음')}</p>
           <p>
             <Button variant="danger">장바구니</Button>{' '}
             <Button variant="outline-danger">바로구매</Button>
