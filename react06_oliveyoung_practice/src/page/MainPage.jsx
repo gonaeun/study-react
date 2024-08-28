@@ -23,10 +23,12 @@ const MainPage = () => {
     const response = await axios.get(DATA_URL)
     const data = response.data
 
+
     setProductList(data)
     // data 받아온 이 시점에서 setProductList함수로 data 담아주기
 
     console.log(data);
+
 
   }
 
@@ -37,16 +39,17 @@ const MainPage = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <Card className='card'>
-            <Card.Img variant="top" src="https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021066105ko.jpg?l=ko" />
+      {productList.map((data,index)=>
+        <Col key={index}>
+          <Card>
+            <Card.Img variant="top" src={data.prd_img} />
             <Card.Body>
               <Card.Title className='card_title'>
-                <p>브랜드명</p>
-                <p className='card_prd_name'>상품명</p>
+                <p>{data.prd_brand}</p>
+                <p className='card_prd_name'>{data.prd_name}</p>
               </Card.Title>
               <Card.Text className='card_text'>
-                28,900원
+                {data.prd_price}
               </Card.Text>
               <p>
                 <span className='prd_flag' style={{ backgroundColor: "red" }}>세일</span>
@@ -54,6 +57,7 @@ const MainPage = () => {
             </Card.Body>
           </Card>
         </Col>
+        )}
       </Row>
     </Container>
   )
