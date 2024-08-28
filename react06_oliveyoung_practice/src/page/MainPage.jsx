@@ -31,13 +31,15 @@ const MainPage = () => {
 
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card className='card'>
         <Card.Img variant="top" src="https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021066105ko.jpg?l=ko" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <Card.Title className='card_title'>
+            <p>브랜드명</p>
+            <p className='card_prd_name'>상품명</p>
+          </Card.Title>
+          <Card.Text className='card_text'>
+            28,900원
           </Card.Text>
         </Card.Body>
       </Card>
