@@ -39,17 +39,17 @@ const MainPage = () => {
   return (
     <Container>
       <Row>
-      {productList.map((data,index)=>
-        <Col key={index}>
+      {productList?.map((item)=>
+        <Col key={item.id}>
           <Card>
-            <Card.Img variant="top" src={data.prd_img} />
+            <Card.Img variant="top" src={item.prd_img} />
             <Card.Body>
               <Card.Title className='card_title'>
-                <p>{data.prd_brand}</p>
-                <p className='card_prd_name'>{data.prd_name}</p>
+                <p>{item.prd_brand}</p>
+                <p className='card_prd_name'>{item.prd_name}</p>
               </Card.Title>
               <Card.Text className='card_text'>
-                {data.prd_price}
+                {item.prd_price}
               </Card.Text>
               <p>
                 <span className='prd_flag' style={{ backgroundColor: "red" }}>세일</span>
