@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import { useState, useEffect } from 'react';
+import Form from 'react-bootstrap/Form';
 
 /*
   실습1. axios를 활용하여 상품 상세정보를 가진 url로 데이터 요청 (넘겨받은 상품 id 활용)
@@ -54,8 +55,18 @@ const ProductDetails = () => {
           <p>{productDetail?.prd_brand}</p>
           <p>{productDetail?.prd_name}</p>
           <p>{productDetail?.prd_price}</p>
-          {/* 3. 옵션에 데이터 유무 >> 옵션 배열의 길이 확인해서 판단하기 */}
-          <p>{productDetail?.prd_options.length !==0 ? ('추가상품있음'):('없음')}</p>
+          {/* 3-1. 옵션에 데이터 유무 >> 옵션 배열의 길이 확인해서 판단하기 */}
+          <p>{productDetail?.prd_options.length !==0 ? (
+            <Form.Select aria-label="Default select example">
+              {productDetail?.prd_options.map((item,index)=>(
+                <option key={index}>{item.prd_name} - {item.prd_price}원</option>
+              ))}
+            </Form.Select>
+            ):(<div>
+              구매수량
+            </div>
+            )}
+            </p>
           <p>
             <Button variant="danger">장바구니</Button>{' '}
             <Button variant="outline-danger">바로구매</Button>
