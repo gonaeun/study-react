@@ -53,7 +53,16 @@ const MainPage = () => {
                 </Card.Text>
                 <p>
                   {(item.prd_flag).map((flag) => (
-                    <span className='prd_flag rounded-fill' style={{ backgroundColor: "red" }}>{flag}</span>
+                    <span className='prd_flag rounded-fill'
+                      style={{
+                        backgroundColor:
+                          flag === '세일' ? '#f65c60' :
+                          flag === '쿠폰' ? '#9bce26' :
+                          flag === '증정' ? '#6fcff7' : '#f374b7'
+                          // 삼항연산자 작성. 거짓일때 >> 또 삼항연산자
+                        }}>
+                      {flag}
+                    </span>
                   ))}
                 </p>
               </Card.Body>
