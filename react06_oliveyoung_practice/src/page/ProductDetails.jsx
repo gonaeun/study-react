@@ -54,6 +54,7 @@ const ProductDetails = () => {
           <p>{productDetail?.prd_brand}</p>
           <p>{productDetail?.prd_name}</p>
           <p>{productDetail?.prd_price}</p>
+          {/* 3. 옵션에 데이터 유무 >> 옵션 배열의 길이 확인해서 판단하기 */}
           <p>{productDetail?.prd_options.length !==0 ? ('추가상품있음'):('없음')}</p>
           <p>
             <Button variant="danger">장바구니</Button>{' '}
