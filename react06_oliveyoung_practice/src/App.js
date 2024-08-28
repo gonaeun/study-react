@@ -30,7 +30,10 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/prdDetail' element={<ProductDetails/>}/>
+        <Route path='/prdDetail/:id' element={<ProductDetails/>}/>
+        {/* URL파라미터로 데이터 전송시, path속성에 key를 설정해줘야 함
+          ex) /prdDetail/:key
+          * 쿼리스트링으로 전달할 경우, 설정하지 않아도 됨 */}
       </Routes>
     </div>
   );
