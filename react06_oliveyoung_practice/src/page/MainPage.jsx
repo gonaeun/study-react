@@ -5,17 +5,28 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom'
 
 /*
 실습1. 화면이 최초에 렌더링 되었을 때, axios를 활용해서 화장품정보를 가진 url데이터를 요청하시오
 실습2. 받아온 데이터를 콘솔창에 출력하시오
 실습3. state에 저장된 화장품 정보를 map()를 활용하여 출력
     >> Card컴포넌트 : 상품이미지, 브랜드명, 상품명, 가격, 플래그 *12번 반복
+실습4. 화장품 이미지를 클릭했을 때, 상품 상세페이지로 이동하도록 구현
+      * 페이지 이동시, 상품번호 전달
+        방법1) /products/1
+        방법2) /products?id=1
 */
 
 const MainPage = () => {
 
   const [productList, setProductList] = useState(null)
+  const navigate = useNavigate();
+
+  // 상품 클릭 시, 상세페이지로 이동하는 함수 (navigate도 import)
+  const goToProduct = (id) => {
+    navigate(`/prdDetail/${id}`);
+  }
 
   // json-server로부터 화장품 정보를 가져오는 함수
   const getProductList = async () => {
@@ -42,7 +53,7 @@ const MainPage = () => {
         {productList?.map((item) => (
           <Col key={item.id}>
             <Card>
-              <Card.Img variant="top" src={item.prd_img} />
+              <Card.Img variant="top" onClick={()=>goToProduct(item.id)} src={item.prd_img} />
               <Card.Body>
                 <Card.Title className='card_title'>
                   <p>{item.prd_brand}</p>
