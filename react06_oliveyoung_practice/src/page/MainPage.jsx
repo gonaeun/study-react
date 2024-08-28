@@ -41,6 +41,9 @@ const MainPage = () => {
           <Card.Text className='card_text'>
             28,900원
           </Card.Text>
+          <p>
+            <span className='prd_flag' style={{backgroundColor:"red"}}>세일</span>
+          </p>
         </Card.Body>
       </Card>
     </div>
