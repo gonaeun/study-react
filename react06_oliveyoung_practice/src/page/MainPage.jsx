@@ -58,8 +58,10 @@ const MainPage = () => {
                         backgroundColor:
                           flag === '세일' ? '#f65c60' :
                           flag === '쿠폰' ? '#9bce26' :
-                          flag === '증정' ? '#6fcff7' : '#f374b7'
+                          flag === '증정' ? '#6fcff7' : '#f374b7',
                           // 삼항연산자 작성. 거짓일때 >> 또 삼항연산자
+
+                        width: flag === '오늘드림' ? '60px' : '40px'
                         }}>
                       {flag}
                     </span>
