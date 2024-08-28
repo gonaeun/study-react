@@ -39,24 +39,26 @@ const MainPage = () => {
   return (
     <Container>
       <Row>
-      {productList?.map((item)=>
-        <Col key={item.id}>
-          <Card>
-            <Card.Img variant="top" src={item.prd_img} />
-            <Card.Body>
-              <Card.Title className='card_title'>
-                <p>{item.prd_brand}</p>
-                <p className='card_prd_name'>{item.prd_name}</p>
-              </Card.Title>
-              <Card.Text className='card_text'>
-                {item.prd_price}
-              </Card.Text>
-              <p>
-                <span className='prd_flag' style={{ backgroundColor: "red" }}>세일</span>
-              </p>
-            </Card.Body>
-          </Card>
-        </Col>
+        {productList?.map((item) => (
+          <Col key={item.id}>
+            <Card>
+              <Card.Img variant="top" src={item.prd_img} />
+              <Card.Body>
+                <Card.Title className='card_title'>
+                  <p>{item.prd_brand}</p>
+                  <p className='card_prd_name'>{item.prd_name}</p>
+                </Card.Title>
+                <Card.Text className='card_text'>
+                  {item.prd_price}
+                </Card.Text>
+                <p>
+                  {(item.prd_flag).map((flag) => (
+                    <span className='prd_flag rounded-fill' style={{ backgroundColor: "red" }}>{flag}</span>
+                  ))}
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>)
         )}
       </Row>
     </Container>
