@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 const ProductDetails = () => {
 
@@ -24,8 +25,8 @@ const ProductDetails = () => {
           <p>가격</p>
           <p>추가 구매 할 상품정보 options 있으면 출력, 없으면 구매수량</p>
           <p>
-            <button>장바구니</button>
-            <button>바로구매</button>
+            <Button variant="danger">장바구니</Button>{' '}
+            <Button variant="outline-danger">바로구매</Button>
           </p>
         </Col>
       </Row>
