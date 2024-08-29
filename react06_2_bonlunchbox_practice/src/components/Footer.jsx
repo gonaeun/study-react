@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='footer-box'>COPTRIGHT 2018 BONIF CO. LTE. RIGHTS RESERVED.</div>
   )
 }
 

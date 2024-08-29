@@ -16,9 +16,6 @@ const Header = () => {
   const goToLogin = () => {
     navi('/login');
   }
-
-  
-
   
   return (
     <div className='header-box'>
