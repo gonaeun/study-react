@@ -1,9 +1,6 @@
 import React from 'react'
-// import { useParams } from 'react-router-dom'
-// import axios from 'axios'
-// import { useState, useEffect } from 'react';
 
-const GoodItem = (item) => {
+const GoodItem = ({item}) => {
 
   console.log(item);
   
@@ -12,16 +9,16 @@ const GoodItem = (item) => {
     <div className='goods-item'>
       <div className='goods-item-icon'>
         {
-          item.new?
-          <em className='goods-new'>new</em>
-          : item.best?
-         <em className='goods-best'>best</em>
-          : ""
+           item.new?
+           <em className='goods-new'>new</em>
+           :item.best?
+           <em className='goods-best'>best</em>
+           :" "
         }
       </div>
 
       <div className='goods-thumb'>
-        <img src={item.img} alt='도시락상품'/>
+        <img src={item.main_thumb} alt='도시락상품'/>
       </div>
       
       <div className='goods-name'>

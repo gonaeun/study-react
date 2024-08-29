@@ -39,7 +39,8 @@ const GoodList = () => {
 
   return (
     <div className='goods-list'>
-      {goods?.map((item)=><GoodItem key={item.id} img={item.main_thumb} name={item.name} price={item.price}/>)}
+      {goods?.map((item)=>
+      <GoodItem key={item.id} item={item}/>)}
       
     </div>
   )
