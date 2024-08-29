@@ -1,5 +1,10 @@
 import React from 'react'
 
+/*
+실습) 썸네일 클릭 >> 도시락 상세페이지로 이동하도록
+     URL패턴 : '/menulist/:id'
+*/
+
 const GoodItem = ({item}) => {
 
   console.log(item);

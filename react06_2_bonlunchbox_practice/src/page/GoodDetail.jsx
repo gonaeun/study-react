@@ -14,8 +14,7 @@ const GoodDetail = () => {
             <div className='goods-detail-name'>탄두리&치킨 도시락</div>
             <div className='goods-detail-txt'>한식을 넘어 세계를 담다, 세계 도시락</div>
             <div className='goods-detail-price-box'><strong>11,800</strong>원</div>
-            <div className='goods-detail-summary'>풍미작렬 탄두리 치킨과 매콤담백 중독적인 맛의 커리. \n 고슬고슬 식감 제대로</div>
-            
+            <div className='goods-detail-summary'>풍미작렬 탄두리 치킨과 매콤담백 중독적인 맛의 커리. \n 고슬고슬 식감 제대로 살린 인도식 라이스까지!</div>
           </div>
         </div>
       </div>
