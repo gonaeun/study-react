@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
-// import Header from './components/Header'
-// import Footer from './components/Footer'
+
 import Main from './page/Main';
 import Login from './page/Login';
 import GoodList from './page/GoodList';
 import GoodDetail from './page/GoodDetail';
+
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 /*
 실습1. page 폴더 내에 4개의 페이지 생성
@@ -28,14 +30,16 @@ import GoodDetail from './page/GoodDetail';
 function App() {
   return (
     <div>
-      {/* <Header/> */}
+      <Header/>
+
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/menulist' element={<GoodList/>}/>
         <Route path='/menulist/:id' element={<GoodDetail/>}/>
       </Routes>
-      {/* <Footer/> */}
+
+      <Footer/>
     </div>
   );
 }
