@@ -41,7 +41,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/menulist' element={<GoodList/>}/>
         <Route path='/menulist/:id' element={<PrivateRouter/>} auth={auth}/>
-        {/* 로그인여부 판단해서 넘겨주도록. 인증하는 함수까지 넘겨줄 필요는 없으므로 인증하는 값만 넘겨줌 */}
+        {/* 로그인여부 판단해서 페이지 이동하도록 >> 인증하는 함수(setAuth)까지 넘겨줄 필요는 없으므로 인증하는 값(auth)만 넘겨줌 */}
       </Routes>
 
       <Footer/>
