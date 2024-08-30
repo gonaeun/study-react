@@ -1,6 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+// counterSlice 내에 정의된 reducer 함수를 접근하기 위한 import
+import { CounterActions } from '../redux/reducers/counterSlice'
+
 
 const Counter = () => {
 
@@ -12,14 +15,22 @@ const Counter = () => {
     // useDispatch() : state를 변경하기 위한 명령을 보내는 함수
     const dispatch = useDispatch()
 
+    const handleClick1 = ()=>{
+        dispatch(CounterActions.increment())
+    }
+
+    const handleClick2 = ()=>{
+        dispatch(CounterActions.decrement())
+    }
+
     console.log(count);
     
   return (
     <div>
         <h1>Redux Toolkit 활용 실습</h1>
         <h1>{count}</h1>
-        <button>증가</button>
-        <button>감소</button>
+        <button onClick={handleClick1}>증가</button>
+        <button onClick={handleClick2}>감소</button>
         <button>2씩 증가</button>
     </div>
   )

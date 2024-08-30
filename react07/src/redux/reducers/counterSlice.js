@@ -2,16 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const counterSlice = createSlice({
-    name : 'conter', // conterSlice 여러개일 수 있으니까 이름 설정
+    name : 'counter', // conterSlice 여러개일 수 있으니까 이름 설정
     initialState: { // 내가 관리할 state
-        conut:0     // 초기값 0
+        count:0     // 초기값 0
     }, 
     reducers: {    // state에 대한 변경사항들 함수(reducer)
-        increment : ()=>{
-            console.log('증가');
+        // 컴포넌트가 아니라 슬라이스에 함수를 정의해서 counter.jsx파일에선 useDispatch()로 여기꺼 값 가져다가 쓰면 됨~
+        increment : (state)=>{   // 매개변수 자리에 state를 적으면 내부의 값 (count=0)에 접근 가능
+            console.log('증가', state.count);
+            state.count +=1
         },
-        decrement : ()=>{
+        decrement : (state)=>{
             console.log('감소');
+            state.count -=1
         }
     }
 })
