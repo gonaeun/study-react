@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react';
 
 import Main from './page/Main';
 import Login from './page/Login';
@@ -9,6 +10,7 @@ import GoodDetail from './page/GoodDetail';
 
 import Header from './components/Header'
 import Footer from './components/Footer'
+import PrivateRouter from './page/PrivateRouter';
 
 /*
 실습1. page 폴더 내에 4개의 페이지 생성
@@ -28,6 +30,8 @@ import Footer from './components/Footer'
   - 상품상세페이지 : '/menulist/:id'
 */
 function App() {
+
+  const [ auth, setAuth ] = useState(false)
   return (
     <div>
       <Header/>
@@ -36,7 +40,8 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/menulist' element={<GoodList/>}/>
-        <Route path='/menulist/:id' element={<GoodDetail/>}/>
+        <Route path='/menulist/:id' element={<PrivateRouter/>} auth={auth}/>
+        {/* 로그인여부 판단해서 넘겨주도록. 인증하는 함수까지 넘겨줄 필요는 없으므로 인증하는 값만 넘겨줌 */}
       </Routes>
 
       <Footer/>
