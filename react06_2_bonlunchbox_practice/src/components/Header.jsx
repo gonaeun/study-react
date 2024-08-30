@@ -20,8 +20,7 @@ const Header = ({auth, setAuth}) => {
     }else{
       navi('/login')
     }
-    //auth이 true이면(로그인상태이면) ~,  false이면 로그인화면으로 이동해라
-    navi('/login');
+    //auth이 true이면(로그인상태이면) setAuth(false)를 호출하여 로그아웃 상태로 바꾸고, false이면 로그아웃 상태니까 로그인화면으로 이동해라
   }
   
   return (
