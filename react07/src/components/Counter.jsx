@@ -20,7 +20,13 @@ const Counter = () => {
     }
 
     const handleClick2 = ()=>{
-        dispatch(CounterActions.decrement())
+        dispatch(CounterActions.decrement())  // 함수 호출하는 () 붙여줘야 함수 실행되는고 잊지마
+    }
+
+    const handleClick3 = ()=>{
+        dispatch(CounterActions.incrementByAmount({num:2})) // 페이로드 넣어줘
+          // 0 또는 {num:0}으로 입력 >> 콘솔창에서 incrementByAmount의 action의 payload:0으로 확인됨
+          // 2 입력 >> payload:2 >> 2씩 증가시킬 수 있음!
     }
 
     console.log(count);
@@ -31,7 +37,7 @@ const Counter = () => {
         <h1>{count}</h1>
         <button onClick={handleClick1}>증가</button>
         <button onClick={handleClick2}>감소</button>
-        <button>2씩 증가</button>
+        <button onClick={handleClick3}>2씩 증가</button>
     </div>
   )
 }

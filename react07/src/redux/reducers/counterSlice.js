@@ -15,6 +15,16 @@ const counterSlice = createSlice({
         decrement : (state)=>{
             console.log('감소');
             state.count -=1
+        },
+        incrementByAmount : (state, action) =>{  // action : 디스패치로 넘겨받을 때 값을 가져오는거
+            // action : type, payload를 묶은 객체형태
+            // type : 명령에 대한 구분값
+            // payload : 명령에 대한 값을 저장하는 속성 (0이라고하면 0씩, 2라고하면 2씩 증가됨)
+            //  ex) incrementByAmount({num:2}) >> {type:'counter/incrementByAmount', payload:{num:2}} 로 값이 넘어옴
+            console.log(action);
+            console.log(action.payload.num);
+            state.count += action.payload.num
+            
         }
     }
 })
