@@ -32,15 +32,16 @@ import PrivateRouter from './page/PrivateRouter';
 
 /*
 실습4. auth, setAuth를 헤더 영역에 전달하여 로그인상태에 따라 로그인/로그아웃이 출력되도록 구현
- - 로그인이 아닌 상태에서 "로그인"버튼 클릭 >> 로그인페이지로 이동
- - "로그아웃"버튼 클릭 >> auth값을 false로 변경한 후, 메인페이지로 이동
+ - 로그인이 아닌 상태에서 "로그인"버튼 클릭 >> 로그인페이지로 이동 (로그인여부 판단하려면 auth값 필요)
+ - "로그아웃"버튼 클릭 >> auth값을 false로 변경한 후, 메인페이지로 이동 (로그인을 로그아웃으로 바꾸려면 setAuth함수 필요)
 */
 function App() {
 
   const [ auth, setAuth ] = useState(false)
+
   return (
     <div>
-      <Header/>
+      <Header auth={auth} setAuth={setAuth}/>
 
       <Routes>
         <Route path='/' element={<Main/>}/>

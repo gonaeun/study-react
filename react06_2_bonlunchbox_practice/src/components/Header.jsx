@@ -9,11 +9,18 @@ import { useNavigate } from 'react-router-dom'
   - 로그인 클릭 >> 로그인페이지 (로그인 상태에 따라 텍스트, 이동페이지 바뀌도록) >> useNavigate()
 */
 
-const Header = () => {
+const Header = ({auth, setAuth}) => {
 
   const navi = useNavigate();
 
   const goToLogin = () => {
+    if(auth){
+      setAuth(false)
+      navi('/')
+    }else{
+      navi('/login')
+    }
+    //auth이 true이면 (로그인상태이면) ~ false이면 로그인화면으로 이동해라
     navi('/login');
   }
   
@@ -32,7 +39,7 @@ const Header = () => {
         </ol>
       </div>
       <div className='header-box-util'>
-        <button onClick={goToLogin}>로그인</button>
+        <button onClick={goToLogin}>{auth?"로그아웃":"로그인"}</button>
       </div>
     </div>
   )
