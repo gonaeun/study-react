@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const conterSlice = createSlice({
+const counterSlice = createSlice({
     name : 'conter', // conterSlice 여러개일 수 있으니까 이름 설정
     initialState: { // 내가 관리할 state
         conut:0     // 초기값 0
@@ -16,6 +16,10 @@ const conterSlice = createSlice({
     }
 })
 
-console.log(conterSlice);
+console.log(counterSlice);
 
-export default conterSlice.reducer // store.js의 counterReducer라는 counter에 정보 넘겨주기
+// 컴포넌트에서 reducer 내에 정의된 함수를 접근할 수 있도록 내보내기
+export const CounterActions = counterSlice.actions // increment, decrement함수
+
+// store에서(store.js) counterSlice의 reducer(함수)를 접근할 수 있도록 내보내기
+export default counterSlice.reducer
