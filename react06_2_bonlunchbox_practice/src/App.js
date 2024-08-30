@@ -29,6 +29,12 @@ import PrivateRouter from './page/PrivateRouter';
   - 상품전체목록 : '/menulist'
   - 상품상세페이지 : '/menulist/:id'
 */
+
+/*
+실습4. auth, setAuth를 헤더 영역에 전달하여 로그인상태에 따라 로그인/로그아웃이 출력되도록 구현
+ - 로그인이 아닌 상태에서 "로그인"버튼 클릭 >> 로그인페이지로 이동
+ - "로그아웃"버튼 클릭 >> auth값을 false로 변경한 후, 메인페이지로 이동
+*/
 function App() {
 
   const [ auth, setAuth ] = useState(false)
