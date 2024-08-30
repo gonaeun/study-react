@@ -1,4 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
+import counterReducer from './reducers/counterSlice'
 
 /*
     store: state, reducer를 관리하는 역할
@@ -7,4 +8,8 @@ import {configureStore} from '@reduxjs/toolkit'
     configureStore() : store를 생성하는 함수
 */
 
-export dafault configureStore({})
+export default configureStore({
+    reducer:{
+        counter: counterReducer
+    }
+})
