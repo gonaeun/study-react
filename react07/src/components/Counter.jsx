@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 const Counter = () => {
@@ -8,6 +8,9 @@ const Counter = () => {
     // 매개변수 : state >> store에 보관된 state 정보를 객체로 반환
     // 화살표함수는 매개변수가 하나면 괄호 생략가능
     const count = useSelector(state=>state.counter.count)  // 0 출력(name)
+
+    // useDispatch() : state를 변경하기 위한 명령을 보내는 함수
+    const dispatch = useDispatch()
 
     console.log(count);
     
