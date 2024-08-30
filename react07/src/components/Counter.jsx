@@ -28,6 +28,15 @@ const Counter = () => {
           // 0 또는 {num:0}으로 입력 >> 콘솔창에서 incrementByAmount의 action의 payload:0으로 확인됨
           // 2 입력 >> payload:2 >> 2씩 증가시킬 수 있음!
     }
+    
+    const handleClick4 = ()=>{
+        dispatch(CounterActions.incrementByAmount2({num:10}))
+        
+    }
+    const handleClick5 = ()=>{
+        dispatch(CounterActions.incrementByAmount3({num:10}))
+    }
+
 
     console.log(count);
     
@@ -38,6 +47,8 @@ const Counter = () => {
         <button onClick={handleClick1}>증가</button>
         <button onClick={handleClick2}>감소</button>
         <button onClick={handleClick3}>2씩 증가</button>
+        <button onClick={handleClick4}>10씩 증가</button>
+        <button onClick={handleClick5}>10씩 감소</button>
     </div>
   )
 }

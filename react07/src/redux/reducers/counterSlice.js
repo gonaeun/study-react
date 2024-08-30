@@ -25,6 +25,18 @@ const counterSlice = createSlice({
             console.log(action.payload.num);
             state.count += action.payload.num
             
+        },
+        incrementByAmount2 : (state, action) =>{
+            console.log(action);
+            console.log(action.payload.num);
+            state.count += action.payload.num
+            
+        },
+        incrementByAmount3 : (state, action) =>{ 
+            console.log(action);
+            console.log(action.payload.num);
+            state.count -= action.payload.num
+            
         }
     }
 })
