@@ -7,7 +7,8 @@ const Login = ({setAuth}) => {
   const navi = useNavigate();
 
   const handleSubmit = (e) =>{
-    e.preventDefault(); // 기본 동작을 중단하는 메소드 (이거 안하면, 로그인버튼 눌렀을 때, /login? 물음표가 뜸)
+    e.preventDefault(); // 기본 동작을 중단하는 메소드
+    // 이거 안하면, 로그인버튼 눌렀을 때, 정보가 보내졌다는 의미로/login? 물음표가 뜸 >> 정보가 보내지고 새로고침이 되버리면setAuth(true) 못하니까, 정보 보내지 말기! (우리가 항상 세션으로 정보 갖고있는건 아니니까)
     console.log('동작중지!');
     
     setAuth(true)
