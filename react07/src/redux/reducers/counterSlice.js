@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+// counterSlice() :  Redux Toolkit에서 사용되는 함수.
+//                  리덕스의 슬라이스를 쉽게 생성할 수 있게 해줌
+// 슬라이스 : 상태(state)를 여러 부분으로 나누어 관리하는 것
 
 
 const counterSlice = createSlice({
-    name : 'counter', // conterSlice 여러개일 수 있으니까 이름 설정
-    initialState: { // 내가 관리할 state
-        count:0     // 초기값 0
+    name : 'counter', // conterSlice 여러개일 수 있으니까 slice의 이름 설정
+    initialState: { // 내가 관리할 state (slice의 초기 상태 정의)
+        count:0     // 초기상태 0
     }, 
     reducers: {    // state에 대한 변경사항들 함수(reducer)
         // 컴포넌트가 아니라 슬라이스에 함수를 정의해서 counter.jsx파일에선 useDispatch()로 여기꺼 값 가져다가 쓰면 됨~
