@@ -14,8 +14,14 @@ const CommentList = () => {
   // >> 이 중, 접근해야하는 state가 여러개인 경우, 아래와 같이 구조분해할당 문법으로 저장
   // *주의점 : 객체에 정의된 key이름과 동일한 변수명으로 정의!
   const {CommentList, keyword} = useSelector(state=>state.comment)
+
+  // 검색키워드 결과를 보관하는 state
+  const [filter, setFilter] = useState([])
   
   console.log(CommentList, keyword);
+
+  useEffect(()=>{
+  },[commentList, keyword]) // 업데이트 될 때마다~
   
   
   return (
