@@ -4,8 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useRef } from 'react';
-import { v4 as uuidv4 } from 'uuid'
 import { useDispatch } from 'react-redux';
+import { addComment } from '../redux/reducers/CommentSlice';
+import { v4 as uuidv4 } from 'uuid'
 
 const CommentForm = () => {
     
@@ -15,7 +16,12 @@ const CommentForm = () => {
     const dispatch = useDispatch
 
     const handleSubmit =()=>{
-        console.log(inputRef_1.current, inputRef_2.current);
+        console.log(inputRef_1.current.value, inputRef_2.current.value);
+        dispatch(addComment({
+            id:uuidv4(),
+             writer:inputRef_2.current.value,
+            content:inputRef_1.current.value
+        }))
         
     }
 
