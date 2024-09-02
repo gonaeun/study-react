@@ -2,8 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const CommentSlice = createSlice({
     name:'',
-    initialState:{},
-    reducers:{}
+    initialState:{
+        commentList:[],
+        keyword:''
+    },
+    reducers:{
+        addComment:()=>{},
+        searchComment:()=>{}
+    }
 })
 
 export const CommentActions = CommentSlice.actions
