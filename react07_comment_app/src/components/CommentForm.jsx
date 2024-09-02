@@ -13,7 +13,7 @@ const CommentForm = () => {
     const inputRef_1 = useRef(); // 댓글내용
     const inputRef_2 = useRef(); // 작성자
 
-    const dispatch = useDispatch
+    const dispatch = useDispatch()
 
     const handleSubmit =()=>{
         console.log(inputRef_1.current.value, inputRef_2.current.value);
@@ -22,7 +22,6 @@ const CommentForm = () => {
              writer:inputRef_2.current.value,
             content:inputRef_1.current.value
         }))
-        
     }
 
   return (

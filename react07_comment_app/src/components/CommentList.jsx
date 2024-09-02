@@ -1,12 +1,17 @@
 import React from 'react'
 import CommentItem from './CommentItem'
-
-// 랜덤으로 고유값을 생성해주는 패키지
-import { v4 as uuidv4 } from 'uuid'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const CommentList = () => {
-
-  console.log(uuidv4());
+  
+  // [store의 state 접근 방법]
+  // 1. store 내에 있는 reducer의 key에 접근 : stste.comment
+  // 2. slice 내에 정의된 state에 접근 : state.comment.commentList
+  const commentList = useSelector(state=>state.comment.CommentList)
+  
+  console.log(commentList);
+  
   
   return (
     <div>
