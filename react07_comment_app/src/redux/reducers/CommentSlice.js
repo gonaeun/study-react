@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const CommentSlice = createSlice({
-    name:'',
+    name:'comment',
     initialState:{
         commentList:[],
         keyword:''

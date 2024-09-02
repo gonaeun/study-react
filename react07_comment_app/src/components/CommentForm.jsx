@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-const CommentFrom = () => {
+const CommentForm = () => {
   return (
     <Form>
-        <Row> 
+        <Row className='g-2'> 
             <Col lg='8'> {/* lg는 large사이즈 데스크탑기준 */}
                 <Form.Control type='text' placeholder='댓글 내용 작성'/>
             </Col>
@@ -26,4 +26,4 @@ const CommentFrom = () => {
   )
 }
 
-export default CommentFrom
+export default CommentForm

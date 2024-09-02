@@ -3,10 +3,11 @@ import './App.css';
 import SearchBox from './components/SearchBox';
 import CommentForm from './components/CommentForm';
 import CommentList from './components/CommentList';
+import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <div>
+    <Container>
       <h1>게시글</h1>
       <div>
         <SearchBox/>
@@ -14,7 +15,7 @@ function App() {
         <CommentForm/>
         <CommentList/>
       </div>
-    </div>
+    </Container>
   );
 }
 
