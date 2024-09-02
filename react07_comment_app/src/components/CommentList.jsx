@@ -18,7 +18,7 @@ const CommentList = () => {
       <div>댓글수 : 0</div>
       <hr />
       {commentList.map((item)=>(
-      <CommentItem />
+         <CommentItem key={item.id} comment={item} />
        ))}
     </div>
   )
