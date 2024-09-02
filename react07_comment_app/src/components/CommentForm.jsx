@@ -5,11 +5,14 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid'
+import { useDispatch } from 'react-redux';
 
 const CommentForm = () => {
     
     const inputRef_1 = useRef(); // 댓글내용
     const inputRef_2 = useRef(); // 작성자
+
+    const dispatch = useDispatch
 
     const handleSubmit =()=>{
         console.log(inputRef_1.current, inputRef_2.current);

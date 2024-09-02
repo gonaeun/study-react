@@ -7,13 +7,13 @@ const CommentSlice = createSlice({
         keyword:''
     },
     reducers:{
-        addComment:(state)=>{
-            state.count +=1
+        addComment:()=>{
+           
         },
         searchComment:()=>{}
     }
 })
 
-export const CommentActions = CommentSlice.actions
+export const {addComment, searchComment} = CommentSlice.actions
 
 export default CommentSlice.reducer
