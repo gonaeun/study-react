@@ -17,7 +17,9 @@ const CommentList = () => {
     <div>
       <div>댓글수 : 0</div>
       <hr />
+      {commentList.map((item)=>(
       <CommentItem />
+       ))}
     </div>
   )
 }
