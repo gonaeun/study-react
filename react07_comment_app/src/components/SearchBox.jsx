@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 const SearchBox = () => {
   return (
     <Form>
-      <Row className='g-2'>  //gap-숫자 의미
+      <Row className='g-2'>  
+        {/* gap-숫자 의미 */}
         <Col>
           <Form.Control type='text' placeholder='검색할 키워드를 입력해주세요.' />
         </Col>
