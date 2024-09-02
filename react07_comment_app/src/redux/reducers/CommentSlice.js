@@ -16,7 +16,9 @@ const CommentSlice = createSlice({
             // >> push가 아닌 concat 사용해야함 (권장)
             state.CommentList = state.CommentList.concat(action.payload) // action을 댓글내용에 추가(concat)
         },
-        searchComment:()=>{}
+        searchComment:(state,action)=>{
+            state.keyword = action.payload.keyword
+        }
     }
 })
 

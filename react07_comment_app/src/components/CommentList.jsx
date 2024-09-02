@@ -15,7 +15,8 @@ const CommentList = () => {
   
   return (
     <div>
-      <div>댓글수 : 0</div>
+      <div>댓글수 : {commentList.length}</div>
+      {/* 배열이니까 댓글수는 length로 확인 */}
       <hr />
       {commentList.map((item)=>(
          <CommentItem key={item.id} comment={item} />
