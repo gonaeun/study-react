@@ -18,7 +18,7 @@ const CommentForm = () => {
         <Row className='my-2'>
             {/* 버튼 사이에 너비를 주고 싶을 때. 마진은 mx 또는 my */}
             <Col lg='12'>
-                <Button className='w-100' variant='dart'>등록</Button>
+                <Button className='w-100' variant='dark'>등록</Button>
                 {/* w-숫자 : 너비값을 %로 지정 (0,25,50,78,100) / w는 width */}
             </Col>
         </Row>
