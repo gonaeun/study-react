@@ -3,6 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 //                  리덕스의 슬라이스를 쉽게 생성할 수 있게 해줌
 // 슬라이스 : 상태(state)를 여러 부분으로 나누어 관리하는 것
 
+// [필수요소]
+// 1. name : reducer을 구분하기 위한 이름 정의(문자열)
+// 2. initialState : 초기화 할 state 정의 (객체형태)
+// 3. reducers : state변경요청을 수행하는 action 기능 정의 (객체형태)
+
 
 const counterSlice = createSlice({
     name : 'counter', // conterSlice 여러개일 수 있으니까 slice의 이름 설정
