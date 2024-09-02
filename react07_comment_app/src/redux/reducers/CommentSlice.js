@@ -7,7 +7,9 @@ const CommentSlice = createSlice({
         keyword:''
     },
     reducers:{
-        addComment:()=>{},
+        addComment:(state)=>{
+            state.count +=1
+        },
         searchComment:()=>{}
     }
 })
