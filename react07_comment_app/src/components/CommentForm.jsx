@@ -23,7 +23,7 @@ const CommentForm = () => {
             </Col>
         </Row>
     </Form>
-  )
+  ) 
 }
 
 export default CommentForm
