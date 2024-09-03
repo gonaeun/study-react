@@ -11,7 +11,12 @@ const TodoSlice = createSlice({
             // push와 다름. concat >> react에서 값이 바뀌엇다고 인식!
         },
         checkChangeTodo: ()=>{},
-        textChagngeTodo: ()=>{},
+        textChagngeTodo: (state,action)=>{
+            state.todoList = state.todoList.map((item)=>({
+                ...item,  //{...item} 의미!! => {id:ooo, text:ooo. complete:}로 풀어서 해석하겠다는 의미
+                text:item.id === action.payload.id ? action.payload.text : item.text
+            }))
+        },
         deleteTodo: ()=>{}
     }
 })
