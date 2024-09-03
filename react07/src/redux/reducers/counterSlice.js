@@ -49,7 +49,7 @@ const counterSlice = createSlice({
 console.log(counterSlice);
 
 // 컴포넌트에서 reducer 내에 정의된 함수를 접근할 수 있도록 내보내기
-export const CounterActions = counterSlice.actions // increment, decrement함수
+export const CounterActions = counterSlice.actions // CounterActions.increment, CounterActions.decrement, CounterActions.incrementByAmount 같은 액션 생성자 함수들
 
 // store에서(store.js) counterSlice의 reducer(함수)를 접근할 수 있도록 내보내기
-export default counterSlice.reducer
+export default counterSlice.reducer  // reducers 객체 안에 정의된 함수들(increment, decrement, incrementByAmount 등)과 같이 실제로 변경하는 함수들
