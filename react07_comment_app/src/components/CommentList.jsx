@@ -23,8 +23,11 @@ const CommentList = () => {
   useEffect(()=>{
 
     if(keyword === ""){
-      setFilter(CommentList)
-    }// 키워드가 공백이면, CommentList에 필터 저장하자
+      setFilter(CommentList)     // 키워드가 공백이면, CommentList에 필터 저장하자 (비워져있으면 그대로 출력)
+    }else{
+      let list = CommentList.filter((item)=>item.content.includes(keyword))   // 내용 중 수업이라는 단어가 있는지 조회
+      setFilter(list)
+    }
   },[CommentList, keyword]) // 업데이트 될 때마다~
   
   
