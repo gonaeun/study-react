@@ -9,6 +9,7 @@ import logger from 'redux-logger'
     configureStore() : store를 생성하는 함수
 
     middleware : action과 reducer 사이에 특정 함수를 실행하는 중간 처리기 역할
+    // 여기서는 리덕스 로거를 사용하기 위해 미들웨어 사용함
 */
 
 export default configureStore({
