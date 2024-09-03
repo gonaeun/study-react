@@ -21,19 +21,20 @@ const CommentList = () => {
   console.log(CommentList, keyword);
 
   useEffect(()=>{
+    // 내용 중 수업이라는 단어가 있는지 검색할거야
 
     if(keyword === ""){
-      setFilter(CommentList)     // 키워드가 공백이면, CommentList에 필터 저장하자 (비워져있으면 그대로 출력)
+      setFilter(CommentList)     // 키워드가 공백이면, 전체리스트를 필터에 그대로 저장 (비워져있으면 그대로 출력하라는 뜻)
     }else{
-      let list = CommentList.filter((item)=>item.content.includes(keyword))   // 내용 중 수업이라는 단어가 있는지 조회
-      setFilter(list)
+      let list = CommentList.filter((item)=>item.content.includes(keyword)) // 키워드가 있다면, CommentList를 키워드를 포함하는 항목들만 필터링 한 후
+      setFilter(list)   // SetFilter를 통해 필터링 된 리스트를 필터 상태에 저장
     }
   },[CommentList, keyword]) // 업데이트 될 때마다~
   
   
   return (
     <div>
-      <div>댓글수 : {CommentList.length}</div>
+      <div>댓글수 : {filter.length}</div>
       {/* 배열이니까 댓글수는 length로 확인 */}
       <hr />
       {filter.map((item)=>(
