@@ -16,7 +16,7 @@ const counterSlice = createSlice({
     }, 
     reducers: {    // state에 대한 변경사항들 함수(reducer)
         // 컴포넌트가 아니라 슬라이스에 함수를 정의해서 counter.jsx파일에선 useDispatch()로 여기꺼 값 가져다가 쓰면 됨~
-        increment : (state)=>{   // 매개변수 자리에 state를 적으면 내부의 값 (count=0)에 접근 가능
+        increment : (state)=>{   // 매개변수 state >> 내부의 값 (count=0)에 접근 가능  // state는 counterSlice의 현재 상태 의미하기 때문           
             console.log('증가', state.count);
             state.count +=1
         },
