@@ -21,7 +21,7 @@ const CommentList = () => {
   console.log(CommentList, keyword);
 
   useEffect(()=>{
-  },[commentList, keyword]) // 업데이트 될 때마다~
+  },[CommentList, keyword]) // 업데이트 될 때마다~
   
   
   return (
