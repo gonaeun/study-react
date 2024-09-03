@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
+import { addTodo } from '../redux/reducers/TodoSlice';
 
 const TodoInput = () => {
 

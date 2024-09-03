@@ -6,7 +6,10 @@ const TodoSlice = createSlice({
         todoList:[]
     },
     reducers:{
-        addTodo: ()=>{},
+        addTodo: (state, action)=>{
+            state.todoList = state.todoList.concat(action.payload)
+            // push와 다름. concat >> react에서 값이 바뀌엇다고 인식!
+        },
         checkChangeTodo: ()=>{},
         textChagngeTodo: ()=>{},
         deleteTodo: ()=>{}
