@@ -15,7 +15,7 @@ const TodoList = ({title, checked}) => {
         </p>
         <ul className='todo-llist-ul'>
             {TodoList.map((todo)=>(  // todo라는 매개변수에는 id, text, complete(true/false)값이 들어있음
-                todo.complete === checked ? <TodoItem/> : ''
+                todo.complete === checked ? <TodoItem key={todo.id} todo={todo}/> : ''
                 ))}
         
         </ul>
