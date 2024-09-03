@@ -2,7 +2,7 @@ import React from 'react'
 import TodoItem from './TodoItem'
 import { useSelector } from 'react-redux'
 
-const TodoList = ({title}) => {
+const TodoList = ({title, cheched}) => {
 
     const TodoList = useSelector(state=>state.todo) //state는 store의 reducer의미하므로, store의 todo 함수 불러오기
 

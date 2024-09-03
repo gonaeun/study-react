@@ -8,9 +8,9 @@ const TodoHome = () => {
         <h1 className='todo-tit'>To Do List</h1>
         <TodoInput/>
 
-        <TodoList title={"해야할 일"}/>
+        <TodoList title={"해야할 일"} checked={false}/>
 
-        <TodoList title={"완료된 일"}/>
+        <TodoList title={"완료된 일"} checked={true}/>
     </div>
   )
 }
