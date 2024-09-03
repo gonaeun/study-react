@@ -21,6 +21,10 @@ const CommentList = () => {
   console.log(CommentList, keyword);
 
   useEffect(()=>{
+
+    if(keyword === ""){
+      setFilter(CommentList)
+    }// 키워드가 공백이면, CommentList에 필터 저장하자
   },[CommentList, keyword]) // 업데이트 될 때마다~
   
   
@@ -29,7 +33,7 @@ const CommentList = () => {
       <div>댓글수 : {CommentList.length}</div>
       {/* 배열이니까 댓글수는 length로 확인 */}
       <hr />
-      {CommentList.map((item)=>(
+      {filter.map((item)=>(
          <CommentItem key={item.id} comment={item} />
        ))}
     </div>
