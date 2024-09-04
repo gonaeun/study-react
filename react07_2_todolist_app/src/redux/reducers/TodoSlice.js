@@ -27,7 +27,8 @@ const TodoSlice = createSlice({
             state.todoList = state.todoList.filter((item)=> item.id !==action.payload.id)
         }
             // 실습. todoList 내 삭제할 id를 비교하여 삭제기능 구현하기(filter())
-            // 매개변수 : todoList는 state에서 꺼내오고, id는 action에서 꺼내오면 됨!
+            // 매개변수 : todoList는 state에서 꺼내오고, id는 action(의 payload)에서 꺼내오면 됨!
+            // filter함수 사용법 : new_array = array.filter((element)=>조건) 일때, 조건이 참이면 new_array에 포함되고, 거짓이면 포함되지 않음
     }
 })
 
