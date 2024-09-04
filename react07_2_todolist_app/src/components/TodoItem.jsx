@@ -58,7 +58,8 @@ const TodoItem = ({todo}) => {
             {/* >> 체크풀면 사라지고, 체크하면 나타나도록 함  */}
 
             {/* 실습: 완료상태일 경우, 수정버튼이 보여지지 않도록 */}
-            <button className='todo-item-edit-btn' onClick={handleEdit}>✍🏻</button>
+            {todo.complete?'':<button className='todo-item-edit-btn' onClick={handleEdit}>✍🏻</button>}
+            
         </div>
         }
         <button className='todo-item-delete-btn'>✂</button>
