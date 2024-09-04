@@ -17,7 +17,7 @@ const TodoSlice = createSlice({
                 // complete 속성 (true:할 일이 완료 | false:완료되지않음)
             }))
         },
-        textChagngeTodo: (state,action)=>{
+        textChangeTodo: (state,action)=>{
             state.todoList = state.todoList.map((item)=>({
                 ...item,  //{...item} 의미!! => {id:ooo, text:ooo. complete:}로 풀어서 해석하겠다는 의미
                 text:item.id === action.payload.id ? action.payload.text : item.text
@@ -32,5 +32,5 @@ const TodoSlice = createSlice({
     }
 })
 
-export const {addTodo, checkChangeTodo, textChagngeTodo, deleteTodo} = TodoSlice.actions  // 이제 이 함수들을 어디서든 쓸 수 있어!
+export const {addTodo, checkChangeTodo, textChangeTodo, deleteTodo} = TodoSlice.actions  // 이제 이 함수들을 어디서든 쓸 수 있어!
 export default TodoSlice.reducer  // store에 함수들 넘겨주기

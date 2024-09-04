@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
-import { deleteTodo, textChagngeTodo, checkChangeTodo  } from '../redux/reducers/TodoSlice';
+import { deleteTodo, textChangeTodo, checkChangeTodo  } from '../redux/reducers/TodoSlice';
 
 const TodoItem = ({todo}) => {
 
@@ -22,7 +22,7 @@ const TodoItem = ({todo}) => {
     const handleSubmit = ()=>{
         // store 내의 todoList 아이템 내용을 변경하기 위해서
         // 구분할 수 있는 id와, 변경내용인 text를 객체형태로 전달
-        dispatch(textChagngeTodo({id:todo.id, text:newText}))
+        dispatch(textChangeTodo({id:todo.id, text:newText}))
         setEdit(false)
     }
 

@@ -13,7 +13,7 @@ const TodoList = ({title, checked}) => {
         <p className='todo-list-tit'>
             [{title}]
         </p>
-        <ul className='todo-llist-ul'>
+        <ul className='todo-list-ul'>
             {TodoList.map((todo)=>(  // todo라는 매개변수에는 id, text, complete(true/false)값이 들어있음
                 todo.complete === checked ? <TodoItem key={todo.id} todo={todo}/> : ''
                 ))}
