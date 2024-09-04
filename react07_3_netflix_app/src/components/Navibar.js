@@ -3,16 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import '../App.css';
 import { Link } from 'react-router-dom';
 
 function Navibar() {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="custom-navbar">
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>NETFLIX</Navbar.Brand>
+          <Navbar.Brand as={Link} to='/' className='nav-item'>NETFLIX</Navbar.Brand>
           {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -20,8 +20,8 @@ function Navibar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to='/'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/movies'>Movies</Nav.Link>
+              <Nav.Link as={Link} to='/' className='nav-item2'>Home</Nav.Link>
+              <Nav.Link as={Link} to='/movies' className='nav-item3'>Movies</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -30,7 +30,7 @@ function Navibar() {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-danger">Search</Button>{' '}
             </Form>
           </Navbar.Collapse>
         </Container>
