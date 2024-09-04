@@ -32,6 +32,7 @@ const TodoItem = ({todo}) => {
 
   return (
     <li className=''todo-item>   {/* TodoList 컴포넌트에서 ul 태그안에 TodoItem을 넣었으니까 여기선 li 여야해 */}
+        {/* 실습 : check상태에 따라 icon 구분하기 */}
         {/* <FaCheckCircle className='todo-item-checkbox'/> */}
         <FaRegCircle className='todo-item-checkbox' style={{color:'lightgray'}} onClick={handleChange}/>
 
