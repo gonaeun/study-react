@@ -3,6 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { textChagngeTodo } from '../redux/reducers/TodoSlice';
+import { checkChangeTodo } from '../redux/reducers/TodoSlice';
 
 const TodoItem = ({todo}) => {
 
@@ -38,7 +39,7 @@ const TodoItem = ({todo}) => {
         <FaCheckCircle className='todo-item-checkbox'/> :
         <FaRegCircle className='todo-item-checkbox' style={{color:'lightgray'}} onClick={handleChange}/>
         }   
-        {/* >> 컴플리트가 true일때 조건 삼항연산자로 적음! */}
+        {/* >> 컴플리트가 true일때 조건을 삼항연산자로 적음! */}
         {edit ?
         <div>
             <input
@@ -53,7 +54,10 @@ const TodoItem = ({todo}) => {
         </div>
         :
         <div>
-            <span className='todo-item-content'>{todo.text}</span>
+            <span className={`todo-item-content ${todo.complete?'todo-item-content-checked':''}`}>{todo.text}</span>
+            {/* >> 체크풀면 사라지고, 체크하면 나타나도록 함  */}
+
+            {/* 실습: 완료상태일 경우, 수정버튼이 보여지지 않도록 */}
             <button className='todo-item-edit-btn' onClick={handleEdit}>✍🏻</button>
         </div>
         }
