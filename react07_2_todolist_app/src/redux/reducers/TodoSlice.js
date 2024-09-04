@@ -11,7 +11,7 @@ const TodoSlice = createSlice({
             // push와 다름. concat >> react에서 값이 바뀌엇다고 인식!
         },
         checkChangeTodo: (state,action)=>{
-            state.todoList.map((item)=>({
+            state.todoList = state.todoList.map((item)=>({
                 ...item,
                 complete: item.id === action.payload.id ? !item.complete : item.complete
             }))
