@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
-import { textChagngeTodo } from '../redux/reducers/TodoSlice';
-import { checkChangeTodo } from '../redux/reducers/TodoSlice';
+import { deleteTodo, textChagngeTodo, checkChangeTodo  } from '../redux/reducers/TodoSlice';
 
 const TodoItem = ({todo}) => {
 
@@ -29,6 +28,10 @@ const TodoItem = ({todo}) => {
 
     const handleChange = () =>{
         dispatch(checkChangeTodo({id:todo.id}))
+    }
+
+    const handleDelete = () =>{
+        dispatch(deleteTodo({id:todo.id}))
     }
 
   return (
@@ -62,7 +65,7 @@ const TodoItem = ({todo}) => {
             
         </div>
         }
-        <button className='todo-item-delete-btn'>✂</button>
+        <button className='todo-item-delete-btn' onClick={handleDelete}>🗑</button>
     </li>
   )
 }
