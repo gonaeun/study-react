@@ -22,15 +22,16 @@ const responsive = {
     }
   };
 
-const MovieSlide = () => {
-  return (
-   <Carousel responsive={responsive}>
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-    </Carousel>
-  )
-}
-
+  const MovieSlide = ({movie}) => {   //props로 movie 받아주기
+    return (
+     <Carousel responsive={responsive}>
+          {movie.map((movie, index)=>(
+              <div key={index}>
+                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+              </div>
+          ))}
+      </Carousel>
+    )
+  }
+  
 export default MovieSlide
