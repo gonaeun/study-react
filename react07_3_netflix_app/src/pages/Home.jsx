@@ -4,10 +4,13 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initData } from '../redux/reducers/movieSlice';
 import Banner from '../components/Banner';
+import MovieSlide from '../components/MovieSlide';
 
 const Home = () => {
   const dispatch = useDispatch();
   const popularMovies = useSelector(state => state.movie.popularMovies)   // REDUX에 저장된 데이터를 사용하기 위해 useSelector
+  const topRatedMovies = useSelector(state => state.movie.topRatedMovies)   // REDUX에 저장된 데이터를 사용하기 위해 useSelector
+  const upcomingMovies = useSelector(state => state.movie.upcomingMovies)   // REDUX에 저장된 데이터를 사용하기 위해 useSelector
 
   const fetchMovieData = async () => {
     // API 호출
@@ -39,9 +42,19 @@ const Home = () => {
   
   return (
     <div>
-      <h1>Home Page</h1>
       {popularMovies.results && popularMovies.results.length > 0 && (<Banner movie={popularMovies.results[0]} />)}
       {/* popularMovies가 존재하고, results 배열이 비어있지 않을 경우에만 Banner를 렌더링하도록 >> 조건1 && 조건2 && 결과 */}
+
+      {/* MovieSlide로 데이터 전달 */}
+      <h2>Popular Movies</h2>
+      <MovieSlide movie={popularMovies.results}/> 
+      
+      <h2>Top Rated Movies</h2>
+      <MovieSlide movie={topRatedMovies.results}/> 
+      
+      <h2>Upcoming Movies</h2>
+      <MovieSlide movie={upcomingMovies.results}/> 
+      
     </div>
   );
 };
