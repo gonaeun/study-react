@@ -24,13 +24,20 @@ const responsive = {
   };
 
   const MovieSlide = ({movie}) => {   //props로 movie 받아주기
+    // movie가 배열인지 확인하여 안전하게 map 사용
+  if (!movie || !Array.isArray(movie)) {
+    return null; // movie가 없으면 아무것도 렌더링하지 않음 >> map에 관한 오류 해결!
+  }
+
     return (
       <Carousel responsive={responsive}>
-        {movie.map((movie, index) => (
-          <MovieCard key={index} movie={movie} />
-        ))}
+        {movie.map((item, index)=>(
+         <MovieCard key={index} movie={item}/>
+        )
+        )}
       </Carousel>
-    );
+    )
+
   }
   
 export default MovieSlide
