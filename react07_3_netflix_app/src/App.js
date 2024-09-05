@@ -15,7 +15,7 @@ function App() {
     // const res = await axios   // axios 사용할거면, 우리가 만든 api로 불러오기
     const res = await api.get(API_URL)   //api에 baseURL까진 적혀있으니까 API_URL로는 그이후의 주소만 있으면 됨
 
-    console.log(res.data);
+    console.log('getMovieData()', res.data);
     
   }
 

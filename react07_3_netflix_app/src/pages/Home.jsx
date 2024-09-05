@@ -3,7 +3,7 @@ import api from '../api'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initData } from '../redux/reducers/movieSlice';
-// import Banner from '../components/Banner';
+import Banner from '../components/Banner';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,16 +25,23 @@ const Home = () => {
       topRatedMovies: topRatedMovies.data,
       upcomingMovies: upcomingMovies.data
     }));
+    
+  // console.log('popularMovies222:',popularMovies);
   };
+
+  // console.log('popularMovies111:',popularMovies.results[0]);
+
 
   useEffect(() => {
     fetchMovieData();
-  }, [dispatch]);  // dispatch는 의존성 배열에 추가
+  }, []);
 
+  
   return (
     <div>
       <h1>Home Page</h1>
-      {/* <Banner movie={popularMovies.results[0]}/> */}
+      {popularMovies.results && popularMovies.results.length > 0 && (<Banner movie={popularMovies.results[0]} />)}
+      {/* popularMovies가 존재하고, results 배열이 비어있지 않을 경우에만 Banner를 렌더링하도록 >> 조건1 && 조건2 && 결과 */}
     </div>
   );
 };
