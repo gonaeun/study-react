@@ -9,12 +9,24 @@ const movieSlice = createSlice({
     },
     reducers:{
         initData: (state, action) => {
-            state.popularMovies = action.payload.popularMovies;
+            state.popularMovies = action.payload.popularMovies;    // Home.jsx에서 { popularMovies : res.data } 라는 payload값 넣어줬음 >> state.popularMovies = res.data로 상태 업데이트
             state.topRatedMovies = action.payload.topRatedMovies;
             state.upcomingMovies = action.payload.upcomingMovies;
+
+            // 상태 업데이트 후, 콘솔에 출력
+            console.log({
+              popular: state.popularMovies,
+              topRated: state.topRatedMovies,
+              upcoming: state.upcomingMovies
+          });
           },
+        resetState: (state) => {
+            state.popularMovies = {};
+            state.topRatedMovies = {};
+            state.upcomingMovies = {};
+          }  // 상태를 초기화하는 액션
         },
       });
 
-export const {initData} = movieSlice.actions
+export const { initData, resetState } = movieSlice.actions
 export default movieSlice.reducer
