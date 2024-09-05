@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import MovieCard from './MovieCard'
 
 const responsive = {
     superLargeDesktop: {
@@ -24,14 +25,12 @@ const responsive = {
 
   const MovieSlide = ({movie}) => {   //props로 movie 받아주기
     return (
-     <Carousel responsive={responsive}>
-          {movie.map((movie, index)=>(
-              <div key={index}>
-                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-              </div>
-          ))}
+      <Carousel responsive={responsive}>
+        {movie.map((movie, index) => (
+          <MovieCard key={index} movie={movie} />
+        ))}
       </Carousel>
-    )
+    );
   }
   
 export default MovieSlide
