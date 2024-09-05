@@ -4,6 +4,6 @@ import movieReducer from './reducers/movieSlice'  //movieSlice에서 리듀서 �
 
 export default configureStore({
     reducer:{
-        movies: movieReducer
+        movie: movieReducer
     }
 })

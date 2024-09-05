@@ -3,7 +3,7 @@ import api from '../api'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initData } from '../redux/reducers/movieSlice';
-import Banner from '../components/Banner';
+// import Banner from '../components/Banner';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      <Banner movie={popularMovies.results[0]}/>
+      {/* <Banner movie={popularMovies.results[0]}/> */}
     </div>
   );
 };
