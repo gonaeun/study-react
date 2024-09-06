@@ -10,9 +10,9 @@ const movieSlice = createSlice({
     },
     reducers:{
         initData: (state, action) => {   // initData라는 리듀서 함수를 만들고 상태 업데이트!
-            state.popularMovies = action.payload.popularMovies;    // Home.jsx에서 { popularMovies : res.data } 라는 payload값 넣어줬음 >> state.popularMovies = res.data로 상태 업데이트
-            state.topRatedMovies = action.payload.topRatedMovies;
-            state.upcomingMovies = action.payload.upcomingMovies;
+            state.popularMovies = action.payload.p;    // Home.jsx에서 { popularMovies : res.data } 라는 payload값 넣어줬음 >> state.popularMovies = res.data로 상태 업데이트
+            state.topRatedMovies = action.payload.t;
+            state.upcomingMovies = action.payload.u;
 
             // 상태 업데이트 후, 콘솔에 출력
             console.log({
