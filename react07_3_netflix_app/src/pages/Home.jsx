@@ -60,17 +60,19 @@ const Home = () => {
   return (
     <div>
       {/* popularMovies 배열이 비어있지 않을 경우에만 Banner를 렌더링하도록, length로 판단! */}
-      {popularMovies.length > 0 ? <Banner data={popularMovies[0]}/> : ''}
+      {popularMovies.length > 0 ? 
+      <div>
+        <Banner data={popularMovies[0]}/>
 
-      {/* MovieSlide로 데이터 전달 */}
-      <h2>Popular Movies</h2>
-      <MovieSlide movie={popularMovies.results}/> 
-      
-      <h2>Top Rated Movies</h2>
-      <MovieSlide movie={topRatedMovies.results}/> 
-      
-      <h2>Upcoming Movies</h2>
-      <MovieSlide movie={upcomingMovies.results}/> 
+        <h3>인기있는 영화</h3>
+        <MovieSlide list={popularMovies}/>
+        <h3>Top Rated Movies</h3>
+        <MovieSlide list={topRatedMovies}/>
+        <h3>Upcoming Movies</h3>
+        <MovieSlide list={upcomingMovies}/>
+      </div>
+      :
+      ''}
       
     </div>
   );
