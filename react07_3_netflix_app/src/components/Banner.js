@@ -6,7 +6,9 @@ const Banner = ({data}) => {   // Home.jsx의 return창에서 data를 props로 �
     console.log(data);
     
     const div_styled = {
-      backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${data.poster_path})`
+      backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${data.poster_path})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
     }
     
     return (
