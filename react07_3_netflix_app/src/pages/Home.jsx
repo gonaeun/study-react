@@ -66,14 +66,13 @@ const Home = () => {
 
         <h3>인기있는 영화</h3>
         <MovieSlide list={popularMovies}/>
-        <h3>Top Rated Movies</h3>
+        <h3>평점이 높은 영화</h3>
         <MovieSlide list={topRatedMovies}/>
-        <h3>Upcoming Movies</h3>
+        <h3>개봉 예정 영화</h3>
         <MovieSlide list={upcomingMovies}/>
       </div>
       :
       ''}
-      
     </div>
   );
 };

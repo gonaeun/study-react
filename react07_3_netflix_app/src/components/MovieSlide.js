@@ -11,14 +11,9 @@ import MovieCard from './MovieCard'
       return null; // list가 없으면 아무것도 렌더링하지 않음 >> map에 관한 오류 해결!
     }
       const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
-        },
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
-          items: 3
+          items: 6 // 컴퓨터 화면에 보이는 아이템 갯수가 달라짐
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
