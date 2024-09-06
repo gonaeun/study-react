@@ -5,22 +5,18 @@ const Banner = ({data}) => {   // Home.jsx의 return창에서 data를 props로 �
 
     console.log(data);
     
+    const div_styled = {
+      backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${data.poster_path})`
+    }
+    
     return (
-        <div style={{ 
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`, 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center', 
-          height: '400px', 
-          color: '#fff', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'center', 
-          padding: '20px'
-        }}>
-          <h1>{data.title || data.original_title}</h1>
+      <div className='banner' style={div_styled}>
+        <div className='banner-info'>
+          <h1>{data.title}</h1>
           <p>{data.overview}</p>
         </div>
-      );
+      </div>
+    )
     };
     
 export default Banner;
