@@ -10,9 +10,15 @@ import { Link } from 'react-router-dom';
 function Navibar() {
   return (
     <div>
-      <Navbar expand="lg" className="custom-navbar">
+      <Navbar expand="lg" variant="dark" className="custom-navbar">
         <Container fluid>
-          <Navbar.Brand as={Link} to='/' className='nav-item'>NETFLIX</Navbar.Brand>
+          <Navbar.Brand>
+            <Link to={"/"}>
+            < img src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-symbol.jpg"
+             alt="넷플릭스 로고이미지"
+             width={100}/>
+            </Link>
+          </Navbar.Brand>
           {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -21,7 +27,7 @@ function Navibar() {
               navbarScroll
             >
               <Nav.Link as={Link} to='/' className='nav-item2'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/movies' className='nav-item3'>Movies</Nav.Link>
+              <Nav.Link as={Link} to='/movies' className='nav-item2'>Movies</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
