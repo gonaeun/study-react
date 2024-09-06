@@ -1,4 +1,6 @@
 import React from 'react';
+import Badge from 'react-bootstrap/Badge';
+import Stack from 'react-bootstrap/Stack';
 
 const MovieCard = ({ movie }) => {   // movie를 props로 받기
   return (
