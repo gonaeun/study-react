@@ -3,8 +3,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import MovieCard from './MovieCard'
 
-
-
   const MovieSlide = ({list}) => {   //Home.jsx의 return에서 props로 list 받아주기
     // list가 배열인지 확인하여 안전하게 map 사용
     if (!list || !Array.isArray(list)) {
