@@ -45,7 +45,7 @@ const Home = () => {
       p:popular.data.results,
       t:topRated.data.results,
       u:upcoming.data.results,
-      g:genre.data.results // store에 저장. genre키에 데이터 넣어주는 과정
+      g:genre.data.genres // store에 저장. genre키에 데이터 넣어주는 과정
       // popularMovies: popularApi.data,    // 데이터를 객체 형태로 만들어 initData 액션에 전달  //{popularMovies : data}라는 payload값 입력함. REDUX에 업데이트됨
       // topRatedMovies: topRatedApi.data,
       // upcomingMovies: upcomingApi.data
