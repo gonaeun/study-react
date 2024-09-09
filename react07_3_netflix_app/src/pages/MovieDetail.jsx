@@ -21,9 +21,9 @@ const MovieDetail = () => {
   },[])
 
   return (
-    <Container>
+    <Container className='container movie-details'>
       <Row>
-        <Col>
+        <Col className='poster'>
           <img src={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`} alt='포스터 이미지'/>
         </Col>
         <Col></Col>
