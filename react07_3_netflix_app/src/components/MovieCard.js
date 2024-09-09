@@ -21,7 +21,10 @@ const MovieCard = ({ data }) => {   // MovieSlide에서 data를 props로 받기
           <div className='overlay'>
               <h1>{data.title}</h1>
               <div className='genre'>
-                <Badge bg="danger">장르</Badge></div>
+                {data.genre_ids.map((id)=>(
+                  <Badge bg="danger">장르</Badge>
+                ))}
+              </div>
               <div className='info'>평점: 0.0 | 청소년</div>
           </div>
       </Link>
