@@ -23,9 +23,8 @@ const MovieDetail = () => {
 
   const getReviews = async ()=>{
     let res = await api.get(`/movie/${id}/reviews?language=en-US&page=1`)
-    
+    setReview(res.data.results)
     console.log(res.data.results);
-    
   }
 
   useEffect(()=>{
@@ -34,7 +33,7 @@ const MovieDetail = () => {
   },[])
 
   return (
-    <Container className='container movie-details'>
+    <Container className='movie-details'>
       <Row>
         <Col className='poster'>
           <img src={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`} alt='포스터 이미지'/>
@@ -59,7 +58,13 @@ const MovieDetail = () => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className='container review-box'>
+                {review.map((item)=>(
+                  <div className='review-item' key={item.id}>
+                    <h4>{item.author}</h4>
+                    <p>{item.content}</p>
+                  </div>
+                ))}
         </Col>
       </Row>
     </Container>

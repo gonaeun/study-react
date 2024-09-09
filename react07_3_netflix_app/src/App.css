@@ -76,6 +76,7 @@ body{
 /* movie-details */
 .movie-details{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 100px 0;
   gap: 50px;
