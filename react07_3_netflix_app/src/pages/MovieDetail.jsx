@@ -10,6 +10,7 @@ const MovieDetail = () => {
 
   const {id} = useParams()
   const [movieInfo, setMovieInfo] = useState({ genres: [] })
+  // 초기값을 genres: []로 해야, genres는 항상 배열이므로, map함수를 부를 때 오류가 발생하지 않음
 
   const getMovieInfo = async () =>{
     let res = await api.get(`/movie/${id}?language=ko-KR`)   //axios 객체를 api라는 이름으로 저장해뒀음
@@ -38,7 +39,7 @@ const MovieDetail = () => {
           <div>
             <span>{movieInfo.release_date}</span>
             <span>{movieInfo.runtime}분</span>
-            <span>평점:{movieInfo.vote_agerage}점</span>
+            <span>평점:{movieInfo.vote_average}점</span>
             <span>{movieInfo.adult ? "청불":"청소년"}</span>
           </div>
           <div className='overview'>
