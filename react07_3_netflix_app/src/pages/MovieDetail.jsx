@@ -13,6 +13,7 @@ const MovieDetail = () => {
   // map함수를 부를 때 movieInfo.genres값이 undefined인 경우 때문에 오류가 발생
   // 해결책 1. 초기값을 useState({genres: []})로 >> genres는 항상 배열이므로 오류가 발생하지 않음
   // 해결책 2. 초기값은 그대로 두고, map함수 앞에 물음표 함수 적어주기 (movieInfo.genres가 정의되고 배열인 경우에만 map함수가 호출되도록)
+  const [review, setReview] = useState([])
 
   const getMovieInfo = async () =>{
     let res = await api.get(`/movie/${id}?language=ko-KR`)   //axios 객체를 api라는 이름으로 저장해뒀음
@@ -20,8 +21,16 @@ const MovieDetail = () => {
     setMovieInfo(res.data)
   }
 
+  const getReviews = async ()=>{
+    let res = await api.get(`/movie/${id}/reviews?language=en-US&page=1`)
+    
+    console.log(res.data.results);
+    
+  }
+
   useEffect(()=>{
     getMovieInfo()
+    getReviews()
   },[])
 
   return (
