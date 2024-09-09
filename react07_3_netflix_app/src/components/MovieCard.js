@@ -27,7 +27,7 @@ const MovieCard = ({ data }) => {   // MovieSlide에서 data를 props로 받기
                   </Badge>
                 ))}
               </div>
-              <div className='info'>평점: 0.0 | 청소년</div>
+              <div className='info'>평점: {data.vote_average}점 | {data.adult ? "청불":"청소년"}</div>
           </div>
       </Link>
     </div>
