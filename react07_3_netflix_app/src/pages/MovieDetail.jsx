@@ -26,7 +26,20 @@ const MovieDetail = () => {
         <Col className='poster'>
           <img src={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`} alt='포스터 이미지'/>
         </Col>
-        <Col></Col>
+        <Col className='info'>
+          <div className='genre'>장르</div>
+          <h1>영화제목</h1>
+          <h4>한줄요약</h4>
+          <div>
+            <span>출시일</span>
+            <span>러닝타임</span>
+            <span>평점:0.0점</span>
+            <span>청불</span>
+          </div>
+          <div className='overview'>
+            영화개요
+          </div>
+        </Col>
       </Row>
     </Container>
   )
