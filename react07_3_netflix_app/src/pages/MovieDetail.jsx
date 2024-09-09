@@ -9,7 +9,7 @@ import Badge from 'react-bootstrap/esm/Badge'
 const MovieDetail = () => {
 
   const {id} = useParams()
-  const [movieInfo, setMovieInfo] = useState({ genres: [] })
+  const [movieInfo, setMovieInfo] = useState({})
   // 초기값을 genres: []로 해야, genres는 항상 배열이므로, map함수를 부를 때 오류가 발생하지 않음
 
   const getMovieInfo = async () =>{
@@ -30,7 +30,7 @@ const MovieDetail = () => {
         </Col>
         <Col className='info'>
           <div className='genre'>
-            {movieInfo.genres.map((genre)=>(
+            {movieInfo.genres?.map((genre)=>(
               <Badge key={genre.id} bg='danger'>{genre.name}</Badge>
             ))}
           </div>
