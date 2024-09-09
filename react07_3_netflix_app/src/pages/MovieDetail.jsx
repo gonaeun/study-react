@@ -4,11 +4,12 @@ import api from '../api'
 import Container from 'react-bootstrap/esm/Container'
 import Col from 'react-bootstrap/esm/Col'
 import Row from 'react-bootstrap/esm/Row'
+import Badge from 'react-bootstrap/esm/Badge'
 
 const MovieDetail = () => {
 
   const {id} = useParams()
-  const [movieInfo, setMovieInfo] = useState({})
+  const [movieInfo, setMovieInfo] = useState({ genres: [] })
 
   const getMovieInfo = async () =>{
     let res = await api.get(`/movie/${id}?language=ko-KR`)   //axios 객체를 api라는 이름으로 저장해뒀음
@@ -27,17 +28,21 @@ const MovieDetail = () => {
           <img src={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`} alt='포스터 이미지'/>
         </Col>
         <Col className='info'>
-          <div className='genre'>장르</div>
-          <h1>영화제목</h1>
-          <h4>한줄요약</h4>
+          <div className='genre'>
+            {movieInfo.genres.map((genre)=>(
+              <Badge key={genre.id} bg='danger'>{genre.name}</Badge>
+            ))}
+          </div>
+          <h1>{movieInfo.title}</h1>
+          <h4>{movieInfo.tagline}</h4>
           <div>
-            <span>출시일</span>
-            <span>러닝타임</span>
-            <span>평점:0.0점</span>
-            <span>청불</span>
+            <span>{movieInfo.release_date}</span>
+            <span>{movieInfo.runtime}분</span>
+            <span>평점:{movieInfo.vote_agerage}점</span>
+            <span>{movieInfo.adult ? "청불":"청소년"}</span>
           </div>
           <div className='overview'>
-            영화개요
+          {movieInfo.overview}
           </div>
         </Col>
       </Row>
