@@ -10,7 +10,9 @@ const MovieDetail = () => {
 
   const {id} = useParams()
   const [movieInfo, setMovieInfo] = useState({})
-  // 초기값을 genres: []로 해야, genres는 항상 배열이므로, map함수를 부를 때 오류가 발생하지 않음
+  // map함수를 부를 때 undefined값 때문에 오류가 발생
+  // 해결책 1. 초기값을 useState({genres: []})로 >> genres는 항상 배열이므로 오류가 발생하지 않음
+  // 해결책 2. 초기값은 그대로 두고, map함수 앞에 물음표 함수 적어주기
 
   const getMovieInfo = async () =>{
     let res = await api.get(`/movie/${id}?language=ko-KR`)   //axios 객체를 api라는 이름으로 저장해뒀음
