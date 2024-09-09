@@ -13,6 +13,7 @@ const movieSlice = createSlice({
             state.popularMovies = action.payload.p;    // Home.jsx에서 { popularMovies : res.data } 라는 payload값 넣어줬음 >> state.popularMovies = res.data로 상태 업데이트
             state.topRatedMovies = action.payload.t;
             state.upcomingMovies = action.payload.u;
+            state.genreList = action.payload.g;
 
             // 상태 업데이트 후, 콘솔에 출력
             console.log({

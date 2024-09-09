@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Badge from 'react-bootstrap/Badge';
-import Stack from 'react-bootstrap/Stack';
 
 const MovieCard = ({ data }) => {   // MovieSlide에서 data를 props로 받기
   
@@ -16,10 +15,11 @@ const MovieCard = ({ data }) => {   // MovieSlide에서 data를 props로 받기
   return (
     <div className="movie-card" style={div_styled}>
       <Link to={`/movies/${data.id}`}>
-          <div>
+          <div className='overlay'>
               <h1>{data.title}</h1>
-              <div>장르</div>
-              <div>평점: 0.0 | 청소년</div>
+              <div className='genre'>
+                <Badge bg="danger">장르</Badge></div>
+              <div className='info'>평점: 0.0 | 청소년</div>
           </div>
       </Link>
     </div>

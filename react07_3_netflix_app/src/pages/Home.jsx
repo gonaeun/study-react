@@ -28,10 +28,11 @@ const Home = () => {
     const popularApi = api.get('/movie/popular?language=ko-KR&page=1'); 
     const topRatedApi = api.get('/movie/top_rated?language=ko-KR&page=1');
     const upcomingApi = api.get('/movie/upcoming?language=ko-KR&page=1');
+    const genreApi = api.get('/genre/movie/list?language=ko');
 
     //Promise.all([]): 동시에 여러 개의 API호출을 해야 할 경우 사용
     // 하나라도 통신과정에서 오류가 발생하면 모든 요청이 reject(거절) 되는 방식
-    const [popular, topRated, upcoming] = await Promise.all([popularApi, topRatedApi, upcomingApi])
+    const [popular, topRated, upcoming, genre] = await Promise.all([popularApi, topRatedApi, upcomingApi, genreApi])
 
     console.log(popular);
     console.log(topRated);
@@ -43,7 +44,8 @@ const Home = () => {
     dispatch(initData({   // 객체형태로 {}
       p:popular.data.results,
       t:topRated.data.results,
-      u:upcoming.data.results
+      u:upcoming.data.results,
+      g:genre.data.results // store에 저장. genre키에 데이터 넣어주는 과정
       // popularMovies: popularApi.data,    // 데이터를 객체 형태로 만들어 initData 액션에 전달  //{popularMovies : data}라는 payload값 입력함. REDUX에 업데이트됨
       // topRatedMovies: topRatedApi.data,
       // upcomingMovies: upcomingApi.data
