@@ -5,7 +5,7 @@ const indexRouter = require('./routes')
 
 // 리액트 프로젝트 경로 설정
 const path = require('path')
-app.use(express.static(path.join(__dirname,'..','frontend','build')));  // 정적파일 연결
+app.use(express.static(path.join(__dirname,'..','frontend','build')));  // 정적파일 연결 (npm run build 설치한 이후임)
 
 app.use('/', indexRouter)
 
