@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
+import api from '../api'
 
 const Form = () => {
 
     const [data,setData] = useState('')
     
-    const handleSubmit = ()=>{
-        
+    const handleSubmit = async (e) => {
+      e.preventDefault(); // 누르면 데이터 전송하는 기능이 중단됨!(주소창에 ?뜸) 비동기 통신 해야하니까
+
+      let res = await api.post("/getData", {data:data})
+      console.log(res.data);
+      
     }
 
   return (
