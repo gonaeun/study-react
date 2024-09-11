@@ -27,7 +27,16 @@ router.post('/getData', (req,res)=>{
     conn.end();
 
     // 리액트 페이지로 데이터 응답 보내기 (웹f12에서 보여짐)
-    // res.send({result:"success"})
+    // res.send({result:"success"}) >> 위에 조건문에 이용!
+
+    // 실습) 회원가입, 로그인 처리할 수 있는 기능 구현
+    router.post("/join",(req,res)=>{
+
+    });
+
+    router.post('/login',(req,res)=>{
+
+    });
     
 })
 
