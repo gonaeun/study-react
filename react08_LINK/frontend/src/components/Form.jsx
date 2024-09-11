@@ -10,7 +10,6 @@ const Form = () => {
 
       let res = await api.post("/getData", {data:data})
       console.log(res.data);
-      
     }
 
   return (
