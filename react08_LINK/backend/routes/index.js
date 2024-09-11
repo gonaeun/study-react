@@ -54,7 +54,16 @@ router.post('/login',(req,res)=>{
 
     const {userId, userPw} = req.body;
     const sql = 'SELECT * FROM NODEJS_MEMBER WHERE ID=? AND PW=?';
-    conn.query(sql, [userId, userPw])
+    conn.query(sql, [userId, userPw], (err, rows) =>{
+        if (err){
+            console.log("로그인 실패", err);
+            res.send({result:"failed"})
+        } else if (rows.length > 0){
+            res.send({result:"success"});
+        } else {
+            res.send({result:"failed"})
+        }
+    })
 
 });
 module.exports = router
