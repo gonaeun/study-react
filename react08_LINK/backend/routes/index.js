@@ -9,6 +9,9 @@ router.get('/',(req,res)=>{
 
 router.post('/getData', (req,res)=>{
     console.log('Form으로 요청이 들어옴', req.body);
+
+    // 리액트 페이지로 데이터 응답 보내기 (웹f12에서 보여짐)
+    res.send({result:"success"})
     
 })
 
