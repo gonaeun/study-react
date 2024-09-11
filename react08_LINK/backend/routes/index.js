@@ -8,7 +8,7 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/getData', (req,res)=>{
-    console.log('Form으로 요청이 들어옴');
+    console.log('Form으로 요청이 들어옴', req.body);
     
 })
 
