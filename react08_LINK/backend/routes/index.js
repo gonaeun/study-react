@@ -22,9 +22,8 @@ router.post('/getData', (req,res)=>{
         }else{
             res.send({result:"failed"})    // 데이터가 없을 때
         }
+        conn.end();
     })
-
-    conn.end();
 
     // 리액트 페이지로 데이터 응답 보내기 (웹f12에서 보여짐)
     // res.send({result:"success"}) >> 위에 조건문에 이용!
@@ -34,20 +33,24 @@ router.post('/getData', (req,res)=>{
  // 실습) 회원가입, 로그인 처리할 수 있는 기능 구현
  router.post("/join",(req,res)=>{
 
-    const {userId, userPw, userNick} = req.body;
+    console.log(req.body);
+    // 백엔드에서 콘솔은 터미널창에 보여짐
+    
+    let id = req.body.member.id;
+    let pw = req.body.member.pw;
+    let nickName = req.body.member.nickName;
 
-    const sql = 'INSERT INTO NODEJS_MEMBER (ID, PW, NICKNAME) VALUES (?,?,?)';
-    
-    conn.query(sql, [userId, userPw, userNick], (err,results) => {
-        if (err){
-            console.log("회원가입 중 오류 발생", err);
-            res.send({result:"failed"})
-        } else {
+    let sql = 'INSERT INTO NODEJS_MEMBER (id, pw, nickname) VALUES (?, ?, ?)';
+    conn.query(sql, [id, pw, nickName], (err,rows) => {
+        if (err){console.log("회원가입 중 오류 발생", err);}
+        
+        if(rows){
             res.send({result:"success"})
+        }else{
+            res.send({result:"fail"})
         }
-    })
-    
-    conn.end
+        conn.end
+    });
 });
 
 router.post('/login',(req,res)=>{
@@ -63,7 +66,8 @@ router.post('/login',(req,res)=>{
         } else {
             res.send({result:"failed"})
         }
+        conn.end();
     })
 
 });
-module.exports = router
+module.exports = router;
