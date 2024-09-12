@@ -1,27 +1,41 @@
-import React, {useState} from 'react'
-import api from '../api'
+import React, { useRef } from 'react';
+import api from '../api';
 
 const LoginForm = () => {
-  const [ userId, setUserId ] = useState('');
-  const [ userPw, setUserPw ] = useState('');
 
-  const handleSubmit = async (e) => {
+  const id_Ref = useRef();
+  const pw_Ref = useRef();
+
+  const handleLogin = async (e) => {
       e.preventDefault();
 
-      let res = await api.post("/login", { userId, userPw })
-      console.log(res.data.result === "success" ? "로그인 성공":"로그인 실패");
-      alert(res.data.result === "success"? "로그인 성공":"로그인 실패");
+      let loginMember = {
+          id: id_Ref.current.value,
+          pw: pw_Ref.current.value
+      }
+
+      let res = await api.post("/login", { login: loginMember });
+
+      console.log(res.data);
   }
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <input type='text' placeholder="아이디 입력" value={userId} onChange={(e)=>setUserId(e.target.value)}/>
-            <input type='password' placeholder="비밀번호 입력"  value={userPw} onChange={(e)=>setUserPw(e.target.value)}/>
-            <button type="submit">로그인</button>
+        <form onSubmit={handleLogin}>
+            <p>
+                <label>아이디:</label>
+                <input type='text' ref={id_Ref} />
+            </p>
+            <p>
+                <label>패스워드:</label>
+                <input type="password" ref={pw_Ref} />
+            </p>
+            <p>
+                <input type="submit" value="로그인" />
+            </p>
         </form>
     </div>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

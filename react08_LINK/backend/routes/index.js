@@ -53,21 +53,29 @@ router.post('/getData', (req,res)=>{
     });
 });
 
-router.post('/login',(req,res)=>{
+router.post('/login', (req, res) => {
+    console.log(req.body);
 
-    const {userId, userPw} = req.body;
-    const sql = 'SELECT * FROM NODEJS_MEMBER WHERE ID=? AND PW=?';
-    conn.query(sql, [userId, userPw], (err, rows) =>{
-        if (err){
-            console.log("로그인 실패", err);
-            res.send({result:"failed"})
-        } else if (rows.length > 0){
-            res.send({result:"success"});
-        } else {
-            res.send({result:"failed"})
+    let id = req.body.login.id;
+    let pw = req.body.login.pw;
+
+    let sql = "SELECT * FROM NODEJS_MEMBER WHERE ID=? AND PW=?";
+
+    conn.query(sql, [id, pw], (err, rows) => {
+        if (err) {
+            console.log("로그인 오류발생", err);
         }
-        conn.end();
-    })
-
+        
+        // db에서 조회된 정보는 갯수에 상관없이 배열로 묶여서 반환됨    // [ { ID: 'hani', PW: '1234', NICKNAME: '하니' } ]
+        console.log(rows);
+    
+        if (rows.length > 0) {
+            // DB에서 조회된 KEY값은 대소문자 구분되기 때문에 적확한 KEY값(대문자)으로 적어주기
+            res.send({ result: "success", nickname: rows[0].NICKNAME });
+        } else {
+            res.send({ result: "fail" });
+        }
+    });
 });
+
 module.exports = router;
