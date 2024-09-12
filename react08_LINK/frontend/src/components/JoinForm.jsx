@@ -17,13 +17,15 @@ const JoinForm = () => {
         nickName:nickName_Ref.current.value
         }
 
-        let res = await api.post("/join",{member:member})
+        console.log(member);  // member 객체 확인
+
+        let res = await api.post("/join", {member : member});
         console.log(res.data);  
 
         if(res.data.result === "success"){
           alert("회원가입성공!");
         } else {
-          alert("회원가입실패..");
+          alert("회원가입실패");
         }
     }
 
