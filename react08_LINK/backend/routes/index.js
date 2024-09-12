@@ -54,7 +54,7 @@ router.post('/getData', (req,res)=>{
 });
 
 router.post('/login', (req, res) => {
-    console.log(req.body);
+    console.log(req.body);   // 터미널 콘솔창 : { login: { id: 'hani', pw: '1234' } }
 
     let id = req.body.login.id;
     let pw = req.body.login.pw;
@@ -66,12 +66,12 @@ router.post('/login', (req, res) => {
             console.log("로그인 오류발생", err);
         }
         
-        // db에서 조회된 정보는 갯수에 상관없이 배열로 묶여서 반환됨    // [ { ID: 'hani', PW: '1234', NICKNAME: '하니' } ]
+        // db에서 조회된 정보는 갯수에 상관없이 배열로 묶여서 반환됨    // 터미널 콘솔창 : [ { ID: 'hani', PW: '1234', NICKNAME: '하니' } ]
         console.log(rows);
     
         if (rows.length > 0) {
             // DB에서 조회된 KEY값은 대소문자 구분되기 때문에 적확한 KEY값(대문자)으로 적어주기
-            res.send({ result: "success", nickname: rows[0].NICKNAME });
+            res.send({ result: "success", nickname: rows[0].NICKNAME });   // 웹 콘솔창 : {result: 'success', nickname: '하니'}
         } else {
             res.send({ result: "fail" });
         }
