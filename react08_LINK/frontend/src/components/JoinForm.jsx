@@ -1,8 +1,10 @@
 import React, {useState, useRef} from 'react'
 import api from '../api'
+import { useNavigate } from 'react-router-dom'
 
 const JoinForm = () => {
-    // const [ member, setMember ] = useState({});
+    
+    const navigate = useNavigate();
 
     const id_Ref = useRef();
     const pw_Ref = useRef();
@@ -24,6 +26,7 @@ const JoinForm = () => {
 
         if(res.data.result === "success"){
           alert("회원가입성공!");
+          navigate('/login')
         } else {
           alert("회원가입실패");
         }

@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
 import api from '../api';
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
+
+  const navigate = useNavigate();
 
   const id_Ref = useRef();
   const pw_Ref = useRef();
@@ -17,6 +20,13 @@ const LoginForm = () => {
       let res = await api.post("/login", { login: loginMember });
 
       console.log(res.data);
+
+      if(res.data.result === "success"){
+        alert("로그인 성공!")
+        navigate('/')
+      } else {
+        alert("로그인 실패!")
+      }
   }
 
   return (
