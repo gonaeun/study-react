@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const indexRouter = require('./routes')
+const userRouter = require('./routes/user')
 // const path = require('path')
 
 app.use(express.urlencoded({extended:false}))
