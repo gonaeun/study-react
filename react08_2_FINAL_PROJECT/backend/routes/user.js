@@ -35,14 +35,13 @@ router.post('/login', (req,res)=>{
     conn.connect();
 
     conn.query(sql, [id,pw], (err,rows)=>{
-        if(err){ console.log("로그인 오류발생", err);}
+        if(err){ console.log("로그인 오류 발생", err);}
     
         console.log('db에서 가져온 로그인 정보',rows);
 
         if(rows.length > 0){
             res.json({result:"success", nick:rows[0].NICKNAME});
             console.log("로그인 성공~!");
-            
         }else{
             res.json({result:"fail"});
         }
