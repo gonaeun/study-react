@@ -7,6 +7,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
 app.use('/',indexRouter)
+app.use('/user',userRouter)
 
 // app.use(express.static(path.join(__dirname,'..','frontend','build')))
 
