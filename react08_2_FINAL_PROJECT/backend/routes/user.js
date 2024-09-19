@@ -9,7 +9,7 @@ router.post('/join', (req,res)=>{
     let {id, pw, nick} = req.body
     let sql = 'INSERT INTO NODEJS_MEMBER VALUES(?,?,?)'
 
-    conn.connect();
+    // conn.connect();
     conn.query(sql, [id,pw,nick], (err, rows)=>{
         if(err) {console.log('회원가입 오류발생', err); }
 
@@ -21,7 +21,7 @@ router.post('/join', (req,res)=>{
 
     })
     
-    conn.end();
+    // conn.end();
 });
 
 router.post('/login', (req,res)=>{

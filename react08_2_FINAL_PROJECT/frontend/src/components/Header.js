@@ -1,14 +1,13 @@
 import React , { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const Header = ({nick,setNick}) => {
-    const [login,setLogin] = useState(null)
+const Header = ({nick, setNick}) => {
     const navigate = useNavigate();
 
     const logout = () => {
         // 세션 삭제
         sessionStorage.removeItem("nick");
-        setLogin(null)
+        setNick(null)
         navigate("/");
     }
 
@@ -29,7 +28,7 @@ const Header = ({nick,setNick}) => {
             <a href='#'>Github</a>
         </div>
         <div className='header-section'>
-            {login === null?
+            {nick === null?
                 <div>
                     <Link to={"/login"}>로그인</Link>
                     <Link to={"/join"}>회원가입</Link>
