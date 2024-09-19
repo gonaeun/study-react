@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import api from '../api' 
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({setNick}) => {
 
     const id_ref = useRef()
     const pw_ref = useRef()
@@ -22,6 +22,7 @@ const Login = () => {
 
         if(res.data.result === "success"){
             sessionStorage.setItem('nick', res.data.nick);
+            setNick(res.data.nick)
             navigate('/');
         }else{
             alert("로그인 실패");

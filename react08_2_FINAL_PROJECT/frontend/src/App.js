@@ -6,11 +6,15 @@ import Join from './pages/Join';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react'
 
 function App() {
+
+  const [ nick, setNick ] = useState(null)
+
   return (
     <div className='App'>
-      <Header/>
+      <Header nick={nick} setNick={setNick}/>
 
       <Routes>
         <Route path="/" element={<Content/>}/>
