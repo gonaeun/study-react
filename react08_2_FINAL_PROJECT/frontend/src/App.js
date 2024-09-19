@@ -18,7 +18,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Content/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/login" element={<Login setNick={setNick}/>}/>
         <Route path="/join" element={<Join/>}/>
       </Routes>
 

@@ -6,7 +6,7 @@
 .header {
   display: flex;
   justify-content: space-around;
-  background-color: #06512a; /* 시원한 밝은 파란색 */
+  background-color: #c5e9a3;
   height: 15%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 헤더에 살짝 그림자 추가 */
 }
@@ -42,7 +42,7 @@
   justify-content: center;
   align-items: center;
   height: 10%;
-  background-color: #06512a; /* 헤더와 동일한 밝은 파란색 */
+  background-color: #c5e9a3;
   color: #ffffff; /* 흰색 텍스트 */
 }
 
