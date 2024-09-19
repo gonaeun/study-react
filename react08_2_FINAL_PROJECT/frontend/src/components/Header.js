@@ -1,12 +1,14 @@
-import React from 'react'
+import React , { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+    const [login,setLogin] = useState(sessionStorage.getItem("nick"))
+
   return (
     <div className='header'>
         <div className='header-section'>
             <h2>
-                <Link>로고</Link>
+                <Link to={"/"}>로고</Link>
             </h2>
         </div>
         <div className='header-section'>
@@ -15,8 +17,14 @@ const Header = () => {
             <a href='#'>Github</a>
         </div>
         <div className='header-section'>
-            <Link to={"/login"}>로그인</Link>
-            <Link to={"/join"}>회원가입</Link>
+            {login === undefined?
+                <div>
+                    <Link to={"/login"}>로그인</Link>
+                    <Link to={"/join"}>회원가입</Link>
+                </div>
+                :
+                <span>로그아웃</span>
+            }
         </div>
     </div>
   )
