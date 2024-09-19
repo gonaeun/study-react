@@ -8,6 +8,6 @@ const conn = mysql.createConnections({
     database: 'NODEJS'
 })
 
-conn.connect();
+// conn.connect(); 
 
 module.exports = conn;
