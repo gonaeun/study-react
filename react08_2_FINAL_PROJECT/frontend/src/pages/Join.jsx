@@ -35,7 +35,7 @@ const Join = () => {
                 <input type='text' ref={nick_ref}/>
             </p>
             <p>
-                <input type='submit' value='Login'/>
+                <input type='submit' value='Join'/>
             </p>
         </form>
     </div>

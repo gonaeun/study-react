@@ -8,12 +8,13 @@ const userRouter = require('./routes/user')
 // - 모든 요청/응답에 대해 허용하거나, 특정 도메인에 대해 허용 해줄 경우 >> npm i cors 설치
 const cors = require('cors')
 
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
+// router보다 먼저 불러와져야함 >> data undifined 안 뜨려면!
+
 app.use(cors())
 app.use('/', indexRouter)
 app.use('/user', userRouter)
-
-app.use(express.urlencoded({extended:false}))
-app.use(express.json())
 
 
 // const path = require('path')
