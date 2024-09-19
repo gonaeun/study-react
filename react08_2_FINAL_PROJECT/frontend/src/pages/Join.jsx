@@ -1,9 +1,12 @@
 import React from 'react'
 
 const Join = () => {
+
+
+
   return (
     <div className='content'>
-        <form>
+        <form onSubmit={sendJoin}>
             <p>
                 <label>ID:</label>
                 <input type='text'/>
