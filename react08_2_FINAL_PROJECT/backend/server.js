@@ -19,7 +19,7 @@ app.use(express.json())
 // const path = require('path')
 // app.use(express.static(path.join(__dirname,'..','frontend','build')))
 
-app.set('port',process.env.PORT || 3000)
+app.set('port',process.env.PORT || 3001)
 app.listen(app.get('port'),()=>{
     console.log(`Server is running on ${app.get('port')}`);
 })

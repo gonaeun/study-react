@@ -10,13 +10,13 @@ const Join = () => {
 
     const sendJoin = async (e) =>{
         e.preventDefault()
-        
+
         let joinData = {
             id : id_ref.current.value,
             pw : pw_ref.current.value,
             nick : nick_ref.current.value
         }
-        let res = await api.post('/user/join', joinData)
+        let res = await api.post('/user/join', joinData);
     }
 
   return (
