@@ -1,8 +1,20 @@
-import React , { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React , { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
-    const [login,setLogin] = useState(sessionStorage.getItem("nick"))
+    const [login,setLogin] = useState(null)
+    const navigate = useNavigate();
+
+    const logout = () => {
+        // 세션 삭제
+        sessionStorage.removeItem("nick");
+        setLogin(null)
+        navigate("/");
+    }
+
+    useEffect(()=>{
+        setLogin(sessionStorage.getItem('nick'))
+    },[])
 
   return (
     <div className='header'>
@@ -17,13 +29,13 @@ const Header = () => {
             <a href='#'>Github</a>
         </div>
         <div className='header-section'>
-            {login === undefined?
+            {login === null?
                 <div>
                     <Link to={"/login"}>로그인</Link>
                     <Link to={"/join"}>회원가입</Link>
                 </div>
                 :
-                <span>로그아웃</span>
+                <span onClick={logout}>로그아웃</span>
             }
         </div>
     </div>

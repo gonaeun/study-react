@@ -15,7 +15,7 @@ const Login = () => {
 
         let loginData = {
             id : id_ref.current.value,
-            pw : pw_ref.current.vlaue
+            pw : pw_ref.current.value
         }
 
         let res = await api.post('/user/login', loginData)
@@ -37,7 +37,7 @@ const Login = () => {
             </p>
             <p>
                 <label>PW:</label>
-                <input type='password'ref={pw_ref}/>
+                <input type='password' ref={pw_ref}/>
             </p>
             <p>
                 <input type='submit' value='Login'/>

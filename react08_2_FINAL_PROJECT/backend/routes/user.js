@@ -28,16 +28,21 @@ router.post('/login', (req,res)=>{
     console.log('로그인 요청') 
 
     let {id,pw} = req.body;
-    let sql = "SELECT * FROM NODEJS_MEMBER WHERE ID=? AND PW=?"
+    console.log('로그인 요청받음',req.body);
+    
+    let sql = "SELECT * FROM NODEJS_MEMBER WHERE ID=? AND PW=?";
 
-    conn.connect()
+    conn.connect();
 
     conn.query(sql, [id,pw], (err,rows)=>{
         if(err){ console.log("로그인 오류발생", err);}
     
-        console.log(rows);
+        console.log('db에서 가져온 로그인 정보',rows);
+
         if(rows.length > 0){
-            res.json({result:"sucess", nick:rows[0].NICKNAME})
+            res.json({result:"success", nick:rows[0].NICKNAME});
+            console.log("로그인 성공~!");
+            
         }else{
             res.json({result:"fail"});
         }
