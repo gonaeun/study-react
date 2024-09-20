@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import api from '../api' 
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+
 
 const Login = ({setNick}) => {
 
@@ -26,6 +28,11 @@ const Login = ({setNick}) => {
             navigate('/');
         }else{
             alert("로그인 실패");
+            Swal.fire({
+                title: 'Error!',
+                text: '로그인 실패!!',
+                icon: 'error',
+              })
         }
     }
 
