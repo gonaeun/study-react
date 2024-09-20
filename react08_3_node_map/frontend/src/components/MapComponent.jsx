@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Map, MapMarker } from "react-kakao-maps-sdk"
 import useKakaoLoader from './useKakaoLoader'
+import api from '../api'
 
 const MapComponent = () => {
     useKakaoLoader();
@@ -17,8 +18,17 @@ const MapComponent = () => {
         // F12 - 콘솔창에서 객체로 확인 가능
     };
 
+    // 서버로부터 위치정보 요청
+    const getGwangjuPlace = async () =>{
+        let res = await api.get('/place/position')
+
+        console.log(res.data);
+        
+    }
+
     useEffect(() => {
         getCurrentPosition();
+        getGwangjuPlace()
     }, []);
 
     return (
@@ -27,8 +37,12 @@ const MapComponent = () => {
                 id="map"
                 center={{
                     // 지도의 중심좌표
-                    lat: 33.450701,
-                    lng: 126.570667,
+                    // 인공지능사관학교
+                    lat: 35.14656855941232,
+                    lng: 126.92220584707904,
+                    // 카카오 제주도 본사
+                    // lat: 33.450701,
+                    // lng: 126.570667,
                 }}
                 style={{
                     // 지도의 크기
