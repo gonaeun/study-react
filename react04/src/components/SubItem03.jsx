@@ -1,4 +1,4 @@
-+import React from 'react'
+import React from 'react'
 import { useContext, useRef} from 'react'
 import { useState } from 'react'
 import { TextContext } from '../App'
