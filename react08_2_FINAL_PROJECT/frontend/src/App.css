@@ -6,7 +6,7 @@
 .header {
   display: flex;
   justify-content: space-around;
-  background-color: #c5e9a3;
+  background-color: #201148;
   height: 15%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 헤더에 살짝 그림자 추가 */
 }
@@ -37,21 +37,23 @@
   color: #2c3e50; /* 글씨는 어두운 색 */
 }
 
+.content-slide {
+  height : 75%
+}
+
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10%;
-  background-color: #c5e9a3;
+  background-color: #201148;
   color: #ffffff; /* 흰색 텍스트 */
 }
 
 .project {
   width: 80%;
-  height: 30%;
-  margin: 1%;
-  border: 5px solid #4fc3f7; /* 프로젝트 박스 테두리도 헤더와 통일 */
+  height: 500px;
+  margin: 1% auto;
+  border: 5px solid #201148; /* 프로젝트 박스 테두리도 헤더와 통일 */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  background-color: #f8f9fa; /* 프로젝트 박스 배경을 밝은 회색으로 유지 */
-  color: #2c3e50; /* 어두운 글씨색 */
 }

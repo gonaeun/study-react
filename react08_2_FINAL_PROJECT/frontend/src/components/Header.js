@@ -23,9 +23,9 @@ const Header = ({nick, setNick}) => {
             </h2>
         </div>
         <div className='header-section'>
-            <a href='#'>포트폴리오</a>
-            <a href='#'>블로그</a>
-            <a href='#'>Github</a>
+            <a href='https://www.naver.com/'>포트폴리오</a>
+            <a href='https://www.naver.com/'>블로그</a>
+            <a href='https://www.naver.com/'>Github</a>
         </div>
         <div className='header-section'>
             {nick === null?
